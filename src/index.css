@@ -82,31 +82,22 @@ F5CAC3
   border: none;
   background-color: transparent;
   width: 140%;
-  /* position: absolute; */
 }
 
 .add {
-  /* top: 30%;
-  left: 0; */
   grid-area: 2/1/3/2;
 }
 
 .list {
-  /* top: 30%;
-  right: 0; */
   grid-area: 2/3/3/4;
 }
 .search {
-  /* left: 30%;
-  bottom: -1%; */
   grid-area: 3/2/4/3;
   position: relative;
   top: -8%;
 }
 
 .help {
-  /* left: 30%;
-  top: -1%; */
   grid-area: 1/2/2/3;
   position: relative;
   top: 9%;
