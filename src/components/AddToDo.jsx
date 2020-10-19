@@ -13,7 +13,7 @@ export default class AddToDo extends Component {
     return (
       <form
         action=""
-        className="container text-center border py-3 d-flex flex-column align-items-center col-sm-5 bg-white"
+        className="container text-center border py-5 d-flex flex-column align-items-center col-sm-5 bg-white my-5"
       >
         <h2>Add new item</h2>
         <div className="form-group col-sm-10 row">

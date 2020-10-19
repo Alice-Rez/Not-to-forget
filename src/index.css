@@ -48,8 +48,18 @@ code {
 } */
 
 header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
   font-family: "Knewave", cursive;
   color: #6e0e0c;
+  font-size: 5.5rem;
+  text-align: center;
+  margin-bottom: 5vh;
 }
 
 .btn-custom {
@@ -67,15 +77,17 @@ F5CAC3
 */
 
 .buttons {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   position: relative;
-  margin: auto;
+  /* margin: auto; */
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   place-items: center;
+
+  margin-bottom: 5vh;
 }
 
 .buttons button {
@@ -101,4 +113,20 @@ F5CAC3
   grid-area: 1/2/2/3;
   position: relative;
   top: 9%;
+}
+
+@media screen and (min-width: 900px) {
+  header {
+    flex-direction: row;
+  }
+
+  h1 {
+    font-size: 8rem;
+    margin-right: 0.3em;
+  }
+
+  .buttons {
+    width: 170px;
+    height: 170px;
+  }
 }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Header from "./Header";
-import Navigation from "./Navigation";
+// import Navigation from "./Navigation";
 import AddToDo from "./AddToDo";
 
 export default class App extends Component {
@@ -20,12 +20,12 @@ export default class App extends Component {
   render() {
     return (
       <div className="wrapper">
-        <Header />
+        <Header showAdd={this.showAdd} formVisible={this.state.formVisible} />
         <main className="p-3">
-          <Navigation
+          {/* <Navigation
             showAdd={this.showAdd}
             formVisible={this.state.formVisible}
-          />
+          /> */}
           {this.state.formVisible ? <AddToDo addTask={this.addTask} /> : null}
         </main>
       </div>
