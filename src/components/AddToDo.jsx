@@ -10,6 +10,11 @@ export default class AddToDo extends Component {
       task: { ...this.state.task, [e.target.name]: e.target.value },
     });
   };
+
+  componentDidMount() {
+    this.props.changeStyle("styleAddToDo", "opacity", "1");
+  }
+
   render() {
     return (
       <form

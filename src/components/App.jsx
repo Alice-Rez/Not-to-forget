@@ -9,11 +9,17 @@ import Help from "./Help";
 export default class App extends Component {
   state = {
     tasks: [],
-    styleAddToDo: { opacity: "0" },
+    styleAddToDo: {
+      opacity: "0",
+    },
   };
 
   addTask = (task) => {
     this.setState({ tasks: [...this.state.tasks, task] });
+  };
+
+  changeStyle = (name, property, value) => {
+    this.setState({ [name]: { ...this.state[name], [property]: value } });
   };
 
   render() {
@@ -27,6 +33,7 @@ export default class App extends Component {
                 <AddToDo
                   myStyle={this.state.styleAddToDo}
                   addTask={this.addTask}
+                  changeStyle={this.changeStyle}
                 />
               </Route>
               <Route path="/list">
