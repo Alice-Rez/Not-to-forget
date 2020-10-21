@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 import Header from "./Header";
 // import Navigation from "./Navigation";
 import AddToDo from "./AddToDo";
@@ -19,16 +20,19 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className="wrapper">
-        <Header showAdd={this.showAdd} formVisible={this.state.formVisible} />
-        <main className="p-3">
-          {/* <Navigation
-            showAdd={this.showAdd}
-            formVisible={this.state.formVisible}
-          /> */}
-          {this.state.formVisible ? <AddToDo addTask={this.addTask} /> : null}
-        </main>
-      </div>
+      <Router>
+        <div className="wrapper">
+          <Header showAdd={this.showAdd} formVisible={this.state.formVisible} />
+          <main className="p-3">
+            <Switch>
+              <Route path="/add">
+                <AddToDo addTask={this.addTask} />
+              </Route>
+            </Switch>
+            {/* {this.state.formVisible ? <AddToDo addTask={this.addTask} /> : null} */}
+          </main>
+        </div>
+      </Router>
     );
   }
 }

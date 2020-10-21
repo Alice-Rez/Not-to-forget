@@ -1,19 +1,11 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 export default class Navigation extends Component {
   render() {
     return (
-      <div className="buttons">
-        <button
-          className="add"
-          onClick={() => {
-            if (!this.props.formVisible) {
-              this.props.showAdd(true);
-            } else {
-              this.props.showAdd(false);
-            }
-          }}
-        >
+      <nav className="links">
+        <Link to="/add" className="link add">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             version="1.1"
@@ -43,8 +35,8 @@ export default class Navigation extends Component {
               />
             </g>
           </svg>
-        </button>
-        <button className="list">
+        </Link>
+        <Link to="/list" className="link list">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             version="1.1"
@@ -104,8 +96,8 @@ export default class Navigation extends Component {
               />
             </g>
           </svg>
-        </button>
-        <button className="search">
+        </Link>
+        <Link to="/search" className="link search">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             version="1.1"
@@ -135,8 +127,8 @@ export default class Navigation extends Component {
               />
             </g>
           </svg>
-        </button>
-        <button className="help">
+        </Link>
+        <Link to="/help" className="link help">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             version="1.1"
@@ -179,8 +171,8 @@ export default class Navigation extends Component {
               />
             </g>
           </svg>
-        </button>
-      </div>
+        </Link>
+      </nav>
     );
   }
 }

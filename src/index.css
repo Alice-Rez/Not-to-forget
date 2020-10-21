@@ -76,7 +76,7 @@ F5CAC3
 
 */
 
-.buttons {
+.links {
   width: 200px;
   height: 200px;
   position: relative;
@@ -90,10 +90,10 @@ F5CAC3
   margin-bottom: 5vh;
 }
 
-.buttons button {
+.link {
   border: none;
   background-color: transparent;
-  width: 140%;
+  width: 115%;
 }
 
 .add {
@@ -125,7 +125,7 @@ F5CAC3
     margin-right: 0.3em;
   }
 
-  .buttons {
+  .links {
     width: 170px;
     height: 170px;
   }
