@@ -13,6 +13,7 @@ export default class AddToDo extends Component {
   render() {
     return (
       <form
+        style={this.props.myStyle}
         action=""
         className="container text-center border py-5 d-flex flex-column align-items-center col-sm-5 bg-white my-5"
       >

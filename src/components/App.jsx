@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./Header";
-// import Navigation from "./Navigation";
 import AddToDo from "./AddToDo";
+import ListToDo from "./ListToDo";
+import Search from "./Search";
+import Help from "./Help";
 
 export default class App extends Component {
   state = {
     tasks: [],
+    styleAddToDo: { opacity: "0" },
   };
 
   addTask = (task) => {
@@ -21,10 +24,21 @@ export default class App extends Component {
           <main className="p-3">
             <Switch>
               <Route path="/add">
-                <AddToDo addTask={this.addTask} />
+                <AddToDo
+                  myStyle={this.state.styleAddToDo}
+                  addTask={this.addTask}
+                />
+              </Route>
+              <Route path="/list">
+                <ListToDo />
+              </Route>
+              <Route path="/search">
+                <Search />
+              </Route>
+              <Route path="/help">
+                <Help />
               </Route>
             </Switch>
-            {/* {this.state.formVisible ? <AddToDo addTask={this.addTask} /> : null} */}
           </main>
         </div>
       </Router>
