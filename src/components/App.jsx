@@ -1,17 +1,12 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./Header";
 // import Navigation from "./Navigation";
 import AddToDo from "./AddToDo";
 
 export default class App extends Component {
   state = {
-    formVisible: false,
     tasks: [],
-  };
-
-  showAdd = (boolean) => {
-    this.setState({ formVisible: boolean });
   };
 
   addTask = (task) => {
@@ -22,7 +17,7 @@ export default class App extends Component {
     return (
       <Router>
         <div className="wrapper">
-          <Header showAdd={this.showAdd} formVisible={this.state.formVisible} />
+          <Header />
           <main className="p-3">
             <Switch>
               <Route path="/add">
