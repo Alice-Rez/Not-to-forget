@@ -17,12 +17,12 @@ export default class AddToDo extends Component {
 
   render() {
     return (
-      <section className="container my-5 text-center bg-white py-5 col-xl-5 border">
+      <section className=" rounded container my-5 text-center bg-white py-5 col-xl-5">
         <h2 className="pb-3">Add new item</h2>
         <form
           style={this.props.myStyle}
           action=""
-          className="text-center  py-5 d-flex flex-column align-items-center col-sm-12 bg-white mx-auto"
+          className="text-center  py-5 d-flex flex-column align-items-center col-sm-12 mx-auto"
         >
           <div className="form-group col-sm-10 row">
             <label htmlFor="title" className="col-sm-2 col-form-label ">
