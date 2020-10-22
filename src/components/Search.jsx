@@ -5,7 +5,7 @@ export default function Search(props) {
   const [input, setInput] = useState("");
 
   return (
-    <section className="search-section container my-5 text-center bg-white py-5 col-xl-5 border d-flex flex-column align-items-center justify-content-center">
+    <section className="search-section rounded container my-5 text-center bg-white py-5 col-xl-5 d-flex flex-column align-items-center justify-content-center">
       <h2 className="pb-3">Search items</h2>
       <form className="form-inline ">
         <div className="form-group mx-sm-3 mb-2">
