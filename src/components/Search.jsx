@@ -1,14 +1,35 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
+import SearchItem from "./SearchItem";
 
-export default class Search extends Component {
-  render() {
-    return (
-      <div className="container lead text-center">
-        Here will be shown possibility to search through items
-        <span role="img" aria-labelledby="winking-face">
-          😉
-        </span>
-      </div>
-    );
-  }
+export default function Search(props) {
+  const [input, setInput] = useState("");
+
+  return (
+    <section className="search-section container my-5 text-center bg-white py-5 col-xl-5 border d-flex flex-column align-items-center justify-content-center">
+      <h2 className="pb-3">Search items</h2>
+      <form className="form-inline ">
+        <div className="form-group mx-sm-3 mb-2">
+          <input
+            type="text"
+            class="form-control form-control-lg"
+            id="search"
+            name="search"
+            onInput={(e) => {
+              setInput(e.target.value);
+            }}
+          />
+        </div>
+        <button type="submit" class="btn btn-search mb-2 btn-lg">
+          Search
+        </button>
+        <ul class="search-list list-group">
+          {props.tasks.map((item, index) =>
+            item.title.startsWith(input) && input ? (
+              <SearchItem title={item.title} key={index + 1} />
+            ) : null
+          )}
+        </ul>
+      </form>
+    </section>
+  );
 }

@@ -40,7 +40,7 @@ export default class App extends Component {
                 <ListToDo />
               </Route>
               <Route path="/search">
-                <Search />
+                <Search tasks={this.state.tasks} />
               </Route>
               <Route path="/help">
                 <Help />
