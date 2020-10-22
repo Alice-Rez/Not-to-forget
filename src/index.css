@@ -115,6 +115,22 @@ F5CAC3
   top: 9%;
 }
 
+.btn-search {
+  background-color: #bba0ca;
+  color: white;
+}
+
+.search-section form {
+  position: relative;
+}
+
+.search-list {
+  position: absolute;
+  width: 66%;
+  top: 83%;
+  left: 5%;
+}
+
 @media screen and (min-width: 900px) {
   header {
     flex-direction: row;
