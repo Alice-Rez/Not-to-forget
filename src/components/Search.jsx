@@ -9,7 +9,7 @@ export default function Search(props) {
     <section className="search-section rounded container my-5 text-center bg-white py-5 col-xl-5 d-flex flex-column align-items-center justify-content-center">
       <h2 className="pb-3">Search items</h2>
       <form className="form-inline ">
-        <div className="form-group mx-sm-3 mb-2">
+        <div className="form-group mx-sm-3 mb-2 input-wrapper">
           <input
             type="text"
             class="form-control form-control-lg"
@@ -21,11 +21,23 @@ export default function Search(props) {
               setVisible(true);
             }}
           />
+          <ul class="search-list list-group">
+            {props.tasks.map((item, index) =>
+              item.title.startsWith(input) && input && visible ? (
+                <SearchItem
+                  title={item.title}
+                  setInput={setInput}
+                  setVisible={setVisible}
+                  key={index + 1}
+                />
+              ) : null
+            )}
+          </ul>
         </div>
         <button type="submit" class="btn btn-search mb-2 btn-lg">
           Search
         </button>
-        <ul class="search-list list-group">
+        {/* <ul class="search-list list-group">
           {props.tasks.map((item, index) =>
             item.title.startsWith(input) && input && visible ? (
               <SearchItem
@@ -36,7 +48,7 @@ export default function Search(props) {
               />
             ) : null
           )}
-        </ul>
+        </ul> */}
       </form>
     </section>
   );

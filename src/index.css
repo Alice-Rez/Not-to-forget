@@ -156,15 +156,15 @@ F5CAC3
   color: white;
 }
 
-.search-section form {
+.input-wrapper {
   position: relative;
 }
 
 .search-list {
   position: absolute;
-  width: 66%;
-  top: 83%;
-  left: 4%;
+  width: 100%;
+  top: 100%;
+  left: 0%;
 }
 
 .list-group-item:hover {
