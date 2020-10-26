@@ -3,6 +3,7 @@ import SearchItem from "./SearchItem";
 
 export default function Search(props) {
   const [input, setInput] = useState("");
+  const [visible, setVisible] = useState(true);
 
   return (
     <section className="search-section rounded container my-5 text-center bg-white py-5 col-xl-5 d-flex flex-column align-items-center justify-content-center">
@@ -14,18 +15,31 @@ export default function Search(props) {
             class="form-control form-control-lg"
             id="search"
             name="search"
+            value={input}
             onInput={(e) => {
               setInput(e.target.value);
+              setVisible(true);
             }}
           />
         </div>
         <button type="submit" class="btn btn-search mb-2 btn-lg">
           Search
         </button>
-        <ul class="search-list list-group">
+        <ul
+          class="search-list list-group"
+          // onClick={(e) => {
+          //   setVisible("none");
+          //   e.target.style.display = visible;
+          // }}
+        >
           {props.tasks.map((item, index) =>
-            item.title.startsWith(input) && input ? (
-              <SearchItem title={item.title} key={index + 1} />
+            item.title.startsWith(input) && input && visible ? (
+              <SearchItem
+                title={item.title}
+                setInput={setInput}
+                setVisible={setVisible}
+                key={index + 1}
+              />
             ) : null
           )}
         </ul>
