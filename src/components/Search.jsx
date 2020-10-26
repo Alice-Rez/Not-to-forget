@@ -25,13 +25,7 @@ export default function Search(props) {
         <button type="submit" class="btn btn-search mb-2 btn-lg">
           Search
         </button>
-        <ul
-          class="search-list list-group"
-          // onClick={(e) => {
-          //   setVisible("none");
-          //   e.target.style.display = visible;
-          // }}
-        >
+        <ul class="search-list list-group">
           {props.tasks.map((item, index) =>
             item.title.startsWith(input) && input && visible ? (
               <SearchItem
