@@ -6,5 +6,6 @@ import "./index.css";
 import "./styles/Header.css";
 import "./styles/Navigation.css";
 import "./styles/AddToDo.css";
+import "./styles/Search.css";
 
 ReactDOM.render(<App />, document.getElementById("root"));

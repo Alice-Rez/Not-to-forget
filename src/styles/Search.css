@@ -1,0 +1,19 @@
+.btn-search {
+  background-color: var(--search);
+  color: var(--btn-text);
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.search-list {
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  left: 0%;
+}
+
+.list-group-item:hover {
+  background-color: var(--search-light);
+}
