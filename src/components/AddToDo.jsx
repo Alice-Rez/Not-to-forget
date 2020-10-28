@@ -17,7 +17,7 @@ export default class AddToDo extends Component {
 
   render() {
     return (
-      <section className="section card-white">
+      <section className="card-white section">
         <h2 className="pb-3">Add new item</h2>
         <form
           style={this.props.myStyle}
