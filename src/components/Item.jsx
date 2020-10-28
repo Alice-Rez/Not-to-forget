@@ -31,10 +31,7 @@ export default function Item(props) {
     }
   };
 
-  console.log(props.task.importance);
-
   choosePin(parseInt(props.task.importance));
-  console.log(pin);
 
   return (
     <article className="border card-white">
