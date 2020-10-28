@@ -1,0 +1,4 @@
+.btn-add {
+  background-color: var(--add);
+  color: var(--btn-text);
+}

@@ -52,11 +52,6 @@ body {
   transform: scale(1.1);
 }
 
-.btn-add {
-  background-color: var(--add);
-  color: var(--btn-text);
-}
-
 .btn-search {
   background-color: var(--search);
   color: var(--btn-text);
