@@ -83,7 +83,7 @@ export default class AddToDo extends Component {
           </div>
           <button
             type="submit"
-            className="btn btn-custom col-sm-4"
+            className="btn btn-add col-sm-4"
             onClick={(e) => {
               e.preventDefault();
               this.props.addTask(this.state.task);
