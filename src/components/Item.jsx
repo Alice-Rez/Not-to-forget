@@ -25,7 +25,7 @@ export default function Item(props) {
       case 3:
         pin = pin3;
         break;
-      case 4:
+      default:
         pin = pin4;
         break;
     }
