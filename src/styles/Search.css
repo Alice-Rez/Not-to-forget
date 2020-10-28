@@ -17,3 +17,8 @@
 .list-group-item:hover {
   background-color: var(--search-light);
 }
+
+.search-results {
+  display: grid;
+  place-items: center;
+}
