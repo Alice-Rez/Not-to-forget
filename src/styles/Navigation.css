@@ -25,39 +25,39 @@
   transform: scale(1.2);
 }
 
-.add {
+.icon-add {
   grid-area: 2/1/3/2;
 }
 
-.add:hover circle {
+.icon-add:hover circle {
   fill: var(--add-lighter);
 }
 
-.list {
+.icon-list {
   grid-area: 2/3/3/4;
 }
 
-.list:hover circle {
+.icon-list:hover circle {
   fill: var(--list-lighter);
 }
 
-.search {
+.icon-search {
   grid-area: 3/2/4/3;
   position: relative;
   top: -8%;
 }
 
-.search:hover circle {
+.icon-search:hover circle {
   fill: var(--search-lighter);
 }
 
-.help {
+.icon-help {
   grid-area: 1/2/2/3;
   position: relative;
   top: 9%;
 }
 
-.help:hover circle {
+.icon-help:hover circle {
   fill: var(--help-lighter);
 }
 

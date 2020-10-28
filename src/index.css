@@ -37,15 +37,21 @@ body {
 }
 
 section {
-  width: 90%;
-  max-width: 700px;
   margin: 3em auto;
   padding: 3em 0;
+  text-align: center;
+}
+
+.section {
+  width: 90%;
+  max-width: 700px;
+}
+
+.card-white {
   border-radius: 0.25rem;
   background-color: var(--white);
   box-shadow: 5px 5px 15px var(--shadow-dark),
     -5px -5px 15px var(--shadow-light);
-  text-align: center;
 }
 
 .btn {
