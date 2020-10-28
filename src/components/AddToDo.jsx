@@ -23,6 +23,11 @@ export default class AddToDo extends Component {
           style={this.props.myStyle}
           action=""
           className="text-center py-5 d-flex flex-column align-items-center col-sm-12 mx-auto"
+          onSubmit={(e) => {
+            e.preventDefault();
+            this.props.addTask(this.state.task);
+            e.target.reset();
+          }}
         >
           <div className="form-group col-sm-10 row">
             <label htmlFor="title" className="col-sm-2 col-form-label ">
@@ -32,6 +37,7 @@ export default class AddToDo extends Component {
               type="text"
               name="title"
               id="title"
+              required
               className="form-control col-sm-10"
               onInput={this.getValue}
             />
@@ -44,6 +50,7 @@ export default class AddToDo extends Component {
               type="date"
               name="deadline"
               id="deadline"
+              required
               className="form-control col-sm-10"
               onInput={this.getValue}
             />
@@ -55,6 +62,7 @@ export default class AddToDo extends Component {
             <select
               name="importance"
               id="importance"
+              required
               className="form-control col-sm-10"
               onChange={this.getValue}
             >
@@ -78,14 +86,7 @@ export default class AddToDo extends Component {
               onInput={this.getValue}
             />
           </div>
-          <button
-            type="submit"
-            className="btn btn-add btn-lg col-sm-3"
-            onClick={(e) => {
-              e.preventDefault();
-              this.props.addTask(this.state.task);
-            }}
-          >
+          <button type="submit" className="btn btn-add btn-lg col-sm-3">
             Add
           </button>
         </form>
