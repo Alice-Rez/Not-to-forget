@@ -62,6 +62,7 @@ export default class AddToDo extends Component {
               <option value="1">Yesterday was late!</option>
               <option value="2">It is time to look at it</option>
               <option value="3">No rush......</option>
+              <option value="4">Too early to just think about it</option>
             </select>
           </div>
           <div className="form-group col-sm-10 row">
