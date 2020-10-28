@@ -1,4 +1,10 @@
 article {
   width: 90%;
   max-width: 400px;
+  margin: 2em;
+}
+
+h3 {
+  font-size: 1.3rem;
+  text-transform: uppercase;
 }
