@@ -1,44 +1,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Knewave&family=Oswald&display=swap");
 
-/* 
-
-pallete1:
-
- #ebbab9
-  #97b1a6
-  #407076
-  #c9c5ba
-  #698996
-#39362d
-
-#5e4b56;
-#fcd0a1;
-*/
-
 :root {
-  --primary: #01069b;
-  --primary-dark: #010459;
-  --primary-light: #dbdcfd;
-  --secondary: #cf8617;
-  --secondary-light: #f1c88b;
-  --grey-dark: #292826;
-  --grey-light: #e6e6e7;
+  /* COLORS */
+
+  --background: #f1e9da;
+  --header: #6e0e0c;
+  --btn-text: white;
+  --add: #407076;
+  --add-lighter: #4e888f;
+  --list: #f28482;
+  --list-lighter: #f49c9b;
+  --search: #bba0ca;
+  --search-lighter: #c8b3d4;
+  --search-light: #f1ecf4;
+  --help: #e1ca96;
+  --help-lighter: #ead9b5;
+  --shadow-dark: rgba(0, 0, 0, 0.2);
+  --shadow-light: rgba(255, 255, 255, 0.2);
+
+  /* TRANSITIONS */
+
+  --btn-trans: transform 400ms 50ms;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: "Oswald", sans-serif;
-  background-color: #f1e9da;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  background-color: var(--background);
 }
 
 /* .wrapper {
@@ -48,97 +38,28 @@ code {
 } */
 
 .bg-white {
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2),
-    -5px -5px 15px rgba(255, 255, 255, 0.2);
+  box-shadow: 5px 5px 15px var(--shadow-dark),
+    -5px -5px 15px var(--shadow-light);
 }
 
 .btn {
-  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2),
-    -3px -3px 7px rgba(255, 255, 255, 0.2);
+  box-shadow: 3px 3px 7px var(--shadow-dark), -3px -3px 7px var(--shadow-light);
   text-transform: uppercase;
+  transition: var(--btn-trans);
 }
 
-.btn-custom {
-  background-color: #407076;
-  color: white;
+.btn:hover {
+  transform: scale(1.1);
 }
 
-/* 
-second palette
-
-F5CAC3
-271902
-84A59D
-
-*/
-
-.links {
-  width: 200px;
-  height: 200px;
-  position: relative;
-  /* margin: auto; */
-
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  place-items: center;
-
-  margin-bottom: 5vh;
-}
-
-.link {
-  border: none;
-  background-color: transparent;
-  width: 115%;
-}
-
-.link svg {
-  transition: transform 400ms 50ms;
-}
-
-.link svg:hover {
-  transform: scale(1.2);
-}
-
-.add {
-  grid-area: 2/1/3/2;
-}
-
-.add:hover circle {
-  fill: #4e888f;
-}
-
-.list {
-  grid-area: 2/3/3/4;
-}
-
-.list:hover circle {
-  fill: #f49c9b;
-}
-
-.search {
-  grid-area: 3/2/4/3;
-  position: relative;
-  top: -8%;
-}
-
-.search:hover circle {
-  fill: #c8b3d4;
-}
-
-.help {
-  grid-area: 1/2/2/3;
-  position: relative;
-  top: 9%;
-}
-
-.help:hover circle {
-  fill: #ead9b5;
+.btn-add {
+  background-color: var(--add);
+  color: var(--btn-text);
 }
 
 .btn-search {
-  background-color: #bba0ca;
-  color: white;
+  background-color: var(--search);
+  color: var(--btn-text);
 }
 
 .input-wrapper {
@@ -153,12 +74,5 @@ F5CAC3
 }
 
 .list-group-item:hover {
-  background-color: #f1ecf4;
-}
-
-@media screen and (min-width: 900px) {
-  .links {
-    width: 170px;
-    height: 170px;
-  }
+  background-color: var(--search-light);
 }
