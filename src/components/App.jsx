@@ -22,6 +22,13 @@ export default class App extends Component {
         importance: "2",
         description: "Presentation of our final projects. last day in DCI.",
       },
+      {
+        title: "Christmas",
+        deadline: "2020-12-24",
+        importance: "1",
+        description:
+          "Although there is covid, still celebrate Christmas at least a bit!",
+      },
     ],
     styleAddToDo: {
       opacity: "0",
