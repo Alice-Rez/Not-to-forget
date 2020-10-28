@@ -8,7 +8,21 @@ import Help from "./Help";
 
 export default class App extends Component {
   state = {
-    tasks: [],
+    tasks: [
+      {
+        title: "learn React",
+        deadline: "2021-01-21",
+        importance: "1",
+        description:
+          "Learn React really in deep during my dci course, using FEM videos and Udemy course from Colt Steele",
+      },
+      {
+        title: "final presentation",
+        deadline: "2021-03-23",
+        importance: "2",
+        description: "Presentation of our final projects. last day in DCI.",
+      },
+    ],
     styleAddToDo: {
       opacity: "0",
     },

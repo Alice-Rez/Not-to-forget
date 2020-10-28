@@ -59,11 +59,9 @@ export default class AddToDo extends Component {
               onChange={this.getValue}
             >
               <option value="">----- Please choose one option -----</option>
-              <option value="Yesterday was late!">Yesterday was late!</option>
-              <option value="It is time to look at it">
-                It is time to look at it
-              </option>
-              <option value="What you can do today, you can also do tomorrow">
+              <option value="1">Yesterday was late!</option>
+              <option value="2">It is time to look at it</option>
+              <option value="3">
                 What you can do today, you can also do tomorrow
               </option>
             </select>

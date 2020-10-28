@@ -23,7 +23,9 @@ export default function Search(props) {
           />
           <ul class="search-list list-group">
             {props.tasks.map((item, index) =>
-              item.title.startsWith(input) && input && visible ? (
+              item.title.toLowerCase().startsWith(input.toLowerCase()) &&
+              input &&
+              visible ? (
                 <SearchItem
                   title={item.title}
                   setInput={setInput}
