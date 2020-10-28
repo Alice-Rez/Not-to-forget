@@ -2,11 +2,19 @@ article {
   width: 90%;
   max-width: 400px;
   margin: 2em;
-  padding: 2em;
+  padding: 1em 2em 2em;
 }
 
 h3 {
   font-size: 1.3rem;
   text-transform: uppercase;
   font-weight: 500;
+}
+
+figure {
+  margin-bottom: 2em;
+}
+
+img {
+  width: 15%;
 }

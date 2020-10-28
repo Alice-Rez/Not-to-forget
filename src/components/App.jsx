@@ -25,7 +25,7 @@ export default class App extends Component {
       {
         title: "Christmas",
         deadline: "2020-12-24",
-        importance: "1",
+        importance: "3",
         description:
           "Although there is covid, still celebrate Christmas at least a bit!",
       },
