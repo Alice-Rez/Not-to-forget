@@ -5,7 +5,7 @@ export default class Navigation extends Component {
   render() {
     return (
       <nav className="links">
-        <Link to="/add" className="link add">
+        <Link to="/add" className="link icon-add">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             version="1.1"
@@ -36,7 +36,7 @@ export default class Navigation extends Component {
             </g>
           </svg>
         </Link>
-        <Link to="/list" className="link list">
+        <Link to="/list" className="link icon-list">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             version="1.1"
@@ -97,7 +97,7 @@ export default class Navigation extends Component {
             </g>
           </svg>
         </Link>
-        <Link to="/search" className="link search">
+        <Link to="/search" className="link icon-search">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             version="1.1"
@@ -128,7 +128,7 @@ export default class Navigation extends Component {
             </g>
           </svg>
         </Link>
-        <Link to="/help" className="link help">
+        <Link to="/help" className="link icon-help">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             version="1.1"

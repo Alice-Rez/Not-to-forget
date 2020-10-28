@@ -6,7 +6,7 @@ export default function Search(props) {
   const [visible, setVisible] = useState(true);
 
   return (
-    <section className="d-flex flex-column align-items-center justify-content-center">
+    <section className="section card-white d-flex flex-column align-items-center justify-content-center">
       <h2 className="pb-3">Search items</h2>
       <form className="form-inline">
         <div className="form-group mx-sm-3 mb-2 input-wrapper">
