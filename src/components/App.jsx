@@ -29,6 +29,12 @@ export default class App extends Component {
         description:
           "Although there is covid, still celebrate Christmas at least a bit!",
       },
+      {
+        title: "silvester",
+        deadline: "2020-12-31",
+        importance: 4,
+        description: "Finally end of this horror year!!!!",
+      },
     ],
     styleAddToDo: {
       opacity: "0",
