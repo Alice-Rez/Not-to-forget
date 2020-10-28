@@ -7,5 +7,7 @@ import "./styles/Header.css";
 import "./styles/Navigation.css";
 import "./styles/AddToDo.css";
 import "./styles/Search.css";
+import "./styles/ListToDo.css";
+import "./styles/Item.css";
 
 ReactDOM.render(<App />, document.getElementById("root"));

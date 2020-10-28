@@ -1,14 +1,17 @@
 import React, { Component } from "react";
+import Item from "./Item";
 
 export default class ListToDo extends Component {
   render() {
     return (
-      <div className="container lead text-center">
-        Here will be shown the list of to-dos
-        <span role="img" aria-labelledby="winking-face">
-          😉
-        </span>
-      </div>
+      <section>
+        <h2>Your to-do items</h2>
+        <section className="list-card-deck">
+          {this.props.tasks.map((task, index) => (
+            <Item key={`task-${index + 1}`} task={task} />
+          ))}
+        </section>
+      </section>
     );
   }
 }

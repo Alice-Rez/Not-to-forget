@@ -50,7 +50,7 @@ export default class App extends Component {
               />
             </Route>
             <Route path="/list">
-              <ListToDo />
+              <ListToDo tasks={this.state.tasks} />
             </Route>
             <Route path="/search">
               <Search tasks={this.state.tasks} />
