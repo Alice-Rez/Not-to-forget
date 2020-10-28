@@ -17,12 +17,12 @@ export default class AddToDo extends Component {
 
   render() {
     return (
-      <section className=" rounded container my-5 text-center bg-white py-5 col-xl-5">
+      <section>
         <h2 className="pb-3">Add new item</h2>
         <form
           style={this.props.myStyle}
           action=""
-          className="text-center  py-5 d-flex flex-column align-items-center col-sm-12 mx-auto"
+          className="text-center py-5 d-flex flex-column align-items-center col-sm-12 mx-auto"
         >
           <div className="form-group col-sm-10 row">
             <label htmlFor="title" className="col-sm-2 col-form-label ">
@@ -58,7 +58,7 @@ export default class AddToDo extends Component {
               className="form-control col-sm-10"
               onChange={this.getValue}
             >
-              <option value="">----- Please choose one option -----</option>
+              <option value="">----- Choose one -----</option>
               <option value="1">Yesterday was late!</option>
               <option value="2">It is time to look at it</option>
               <option value="3">
@@ -81,7 +81,7 @@ export default class AddToDo extends Component {
           </div>
           <button
             type="submit"
-            className="btn btn-add col-sm-4"
+            className="btn btn-add btn-lg col-sm-3"
             onClick={(e) => {
               e.preventDefault();
               this.props.addTask(this.state.task);

@@ -39,29 +39,27 @@ export default class App extends Component {
   render() {
     return (
       <Router>
-        <div className="wrapper">
-          <Header />
-          <main className="p-3">
-            <Switch>
-              <Route path="/add">
-                <AddToDo
-                  myStyle={this.state.styleAddToDo}
-                  addTask={this.addTask}
-                  changeStyle={this.changeStyle}
-                />
-              </Route>
-              <Route path="/list">
-                <ListToDo />
-              </Route>
-              <Route path="/search">
-                <Search tasks={this.state.tasks} />
-              </Route>
-              <Route path="/help">
-                <Help />
-              </Route>
-            </Switch>
-          </main>
-        </div>
+        <Header />
+        <main className="p-3">
+          <Switch>
+            <Route path="/add">
+              <AddToDo
+                myStyle={this.state.styleAddToDo}
+                addTask={this.addTask}
+                changeStyle={this.changeStyle}
+              />
+            </Route>
+            <Route path="/list">
+              <ListToDo />
+            </Route>
+            <Route path="/search">
+              <Search tasks={this.state.tasks} />
+            </Route>
+            <Route path="/help">
+              <Help />
+            </Route>
+          </Switch>
+        </main>
       </Router>
     );
   }

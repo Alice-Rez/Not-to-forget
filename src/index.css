@@ -3,9 +3,10 @@
 :root {
   /* COLORS */
 
+  --white: #fbfbfb;
+  --black: #0a0a0a;
   --background: #f1e9da;
   --header: #6e0e0c;
-  --btn-text: white;
   --add: #407076;
   --add-lighter: #4e888f;
   --list: #f28482;
@@ -28,18 +29,23 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: "Oswald", sans-serif;
+  color: var(--black);
   background-color: var(--background);
+  /* min-height: 100vh;
+  display: grid;
+  align-items: center; */
 }
 
-/* .wrapper {
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-} */
-
-.bg-white {
+section {
+  width: 90%;
+  max-width: 700px;
+  margin: 3em auto;
+  padding: 3em 0;
+  border-radius: 0.25rem;
+  background-color: var(--white);
   box-shadow: 5px 5px 15px var(--shadow-dark),
     -5px -5px 15px var(--shadow-light);
+  text-align: center;
 }
 
 .btn {
