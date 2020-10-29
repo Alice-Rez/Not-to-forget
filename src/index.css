@@ -47,10 +47,13 @@ p {
   font-weight: 300;
 }
 
+.form-control {
+  border: none;
+}
+
 input,
 select,
 textarea {
-  border-color: transparent;
   box-shadow: 3px 3px 7px var(--shadow-dark), -3px -3px 7px var(--shadow-light);
 }
 

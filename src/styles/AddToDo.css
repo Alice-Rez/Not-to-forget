@@ -1,4 +1,5 @@
 .btn-add {
   background-color: var(--add);
   color: var(--white);
+  margin-top: 0.5em;
 }

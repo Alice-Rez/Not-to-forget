@@ -85,7 +85,10 @@ export default class AddToDo extends Component {
               onInput={this.getValue}
             />
           </div>
-          <button type="submit" className="btn btn-add btn-lg col-sm-3">
+          <button
+            type="submit"
+            className="btn btn-add btn-lg offset-sm-1 col-sm-3"
+          >
             Add new item
           </button>
         </form>
