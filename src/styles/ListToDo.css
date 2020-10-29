@@ -1,3 +1,19 @@
+.buttons-group {
+  width: 90%;
+  max-width: 450px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.btn-list {
+  background-color: var(--list);
+  color: var(--white);
+  margin-bottom: 0.5em;
+}
+
 .list-card-deck {
   display: flex;
   flex-wrap: wrap;
