@@ -3,12 +3,9 @@ import React, { Component } from "react";
 export default class Help extends Component {
   render() {
     return (
-      <div className="container lead text-center">
-        Here will be shown help
-        <span role="img" aria-labelledby="winking-face">
-          😉
-        </span>
-      </div>
+      <section className="section-main card-white">
+        <h2>Clever management of your to-dos</h2>
+      </section>
     );
   }
 }
