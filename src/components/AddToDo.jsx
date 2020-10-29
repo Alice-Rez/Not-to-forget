@@ -17,12 +17,11 @@ export default class AddToDo extends Component {
 
   render() {
     return (
-      <section className="card-white section">
-        <h2 className="pb-3">Add new item</h2>
+      <section className="section">
         <form
           style={this.props.myStyle}
           action=""
-          className="text-center py-5 d-flex flex-column align-items-center col-sm-12 mx-auto"
+          className="text-center d-flex flex-column align-items-center col-sm-12 mx-auto"
           onSubmit={(e) => {
             e.preventDefault();
             this.props.addTask(this.state.task);
@@ -87,7 +86,7 @@ export default class AddToDo extends Component {
             />
           </div>
           <button type="submit" className="btn btn-add btn-lg col-sm-3">
-            Add
+            Add new item
           </button>
         </form>
       </section>
