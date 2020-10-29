@@ -9,7 +9,7 @@ export default function Search(props) {
 
   return (
     <React.Fragment>
-      <section className="section d-flex flex-column align-items-center justify-content-center">
+      <section className="section-main d-flex flex-column align-items-center justify-content-center">
         <form className="form-inline">
           <div className="form-group mx-sm-3 mb-2 input-wrapper">
             <input

@@ -54,7 +54,7 @@ textarea {
   box-shadow: 3px 3px 7px var(--shadow-dark), -3px -3px 7px var(--shadow-light);
 }
 
-.section {
+.section-main {
   width: 90%;
   max-width: 700px;
 }

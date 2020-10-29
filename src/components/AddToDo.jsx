@@ -17,7 +17,7 @@ export default class AddToDo extends Component {
 
   render() {
     return (
-      <section className="section">
+      <section className="section-main">
         <form
           style={this.props.myStyle}
           action=""
