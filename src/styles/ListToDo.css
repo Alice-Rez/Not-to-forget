@@ -1,6 +1,6 @@
 .buttons-group {
   width: 90%;
-  max-width: 450px;
+  max-width: 500px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -12,6 +12,10 @@
   background-color: var(--list);
   color: var(--white);
   margin-bottom: 0.5em;
+}
+
+span {
+  font-weight: 600;
 }
 
 .list-card-deck {

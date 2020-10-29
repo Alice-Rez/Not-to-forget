@@ -9,6 +9,7 @@ export default class ListToDo extends Component {
           <button className="btn btn-lg btn-list">&#11015; Importance</button>
           <button className="btn btn-lg btn-list">&#11015; Deadline</button>
           <button className="btn btn-lg btn-list">&#8681; Title</button>
+          <button className="btn btn-lg btn-list"> Reset</button>
         </section>
         <section className="list-card-deck">
           {this.props.tasks.map((task, index) => (
