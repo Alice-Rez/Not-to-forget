@@ -9,5 +9,6 @@ import "./styles/AddToDo.css";
 import "./styles/Search.css";
 import "./styles/ListToDo.css";
 import "./styles/Item.css";
+import "./styles/Help.css";
 
 ReactDOM.render(<App />, document.getElementById("root"));
