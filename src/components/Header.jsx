@@ -8,7 +8,7 @@ export default class Header extends Component {
       <header className="pt-3">
         <div>
           <h1>Not To Forget</h1>
-          {/* <p className="lead">To-do application for your help</p> */}
+          {/* <h2>Clever managment of your To-dos</h2> */}
         </div>
         <Navigation
           showAdd={this.props.showAdd}
