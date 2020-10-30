@@ -6,3 +6,8 @@ h2 {
 .lead-p {
   font-size: 1.2rem;
 }
+
+article svg {
+  width: 15%;
+  margin-top: 1em;
+}
