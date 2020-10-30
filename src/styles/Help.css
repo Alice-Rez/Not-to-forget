@@ -1,3 +1,7 @@
+.help {
+  padding-bottom: 0;
+}
+
 h2 {
   text-transform: uppercase;
   margin-bottom: 1em;
@@ -7,7 +11,17 @@ h2 {
   font-size: 1.2rem;
 }
 
+.info-main {
+  order: -1;
+}
+
 article svg {
-  width: 15%;
+  width: 60px;
   margin-top: 1em;
+}
+
+@media screen and (min-width: 1200px) {
+  .info-main {
+    order: 0;
+  }
 }

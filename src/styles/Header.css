@@ -4,7 +4,6 @@ header {
   align-items: center;
   flex-direction: column;
   text-align: center;
-  margin-top: 5em;
 }
 
 h1 {
@@ -23,6 +22,7 @@ h1 {
 @media screen and (min-width: 900px) {
   header {
     flex-direction: row;
+    margin-top: 5em;
   }
 
   h1 {

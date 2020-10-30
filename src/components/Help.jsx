@@ -4,7 +4,7 @@ export default class Help extends Component {
   render() {
     return (
       <React.Fragment>
-        <section className="section-main">
+        <section className="section-main help">
           <h2>Clever management of your to-dos</h2>
           <p className="lead-p">
             Never more need to worry about forgetting important things - work
@@ -50,7 +50,7 @@ export default class Help extends Component {
               description is optional
             </p>
           </article>
-          <article className="card-white">
+          <article className="card-white info-main">
             <figure>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
