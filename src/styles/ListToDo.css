@@ -17,9 +17,3 @@
 span {
   font-weight: 600;
 }
-
-.list-card-deck {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}

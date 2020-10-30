@@ -62,11 +62,24 @@ textarea {
   max-width: 700px;
 }
 
+.my-card-deck {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .card-white {
   border-radius: 0.25rem;
   background-color: var(--white);
   box-shadow: 5px 5px 15px var(--shadow-dark),
     -5px -5px 15px var(--shadow-light);
+}
+
+article {
+  width: 90%;
+  max-width: 400px;
+  margin: 2em;
+  padding: 1em 2em 2em;
 }
 
 .btn {
