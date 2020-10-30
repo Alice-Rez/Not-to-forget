@@ -1,6 +1,6 @@
 # Not to forget
 
-Simple React to-do app. In progress, adding new features, making code better (as I learn more about React).
+Simple React to-do app. Work in progress, adding new features, making code better (as I learn more about React).
 
 ## Setup
 
