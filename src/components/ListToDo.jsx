@@ -65,7 +65,7 @@ export default class ListToDo extends Component {
             Reset
           </button>
         </section>
-        <section className="list-card-deck">
+        <section className="my-card-deck">
           {this.props.tasks.map((task, index) => (
             <Item key={`task-${index + 1}`} task={task} />
           ))}
