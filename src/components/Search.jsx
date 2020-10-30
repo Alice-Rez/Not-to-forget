@@ -14,7 +14,7 @@ export default function Search(props) {
           <div className="form-group mx-sm-3 mb-2 input-wrapper">
             <input
               type="text"
-              class="form-control form-control-lg"
+              className="form-control form-control-lg"
               id="search"
               name="search"
               value={input}
@@ -23,7 +23,7 @@ export default function Search(props) {
                 setVisible(true);
               }}
             />
-            <ul class="search-list list-group">
+            <ul className="search-list list-group">
               {props.tasks.map((item, index) =>
                 item.title.toLowerCase().startsWith(input.toLowerCase()) &&
                 input &&
@@ -40,7 +40,7 @@ export default function Search(props) {
           </div>
           <button
             type="submit"
-            class="btn btn-search mb-2 btn-lg"
+            className="btn btn-search mb-2 btn-lg"
             onClick={(e) => {
               e.preventDefault();
               props.tasks.map((task) =>
