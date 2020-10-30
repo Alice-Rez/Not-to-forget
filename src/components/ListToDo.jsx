@@ -6,10 +6,21 @@ export default class ListToDo extends Component {
     impClicked: false,
     deadClicked: false,
     titleClicked: false,
-    styleBtn: {
-      color: "#fbfbfb",
-    },
   };
+
+  sortTasks = (property) => {
+    let helper = [...this.props.tasks];
+    helper.sort(function (a, b) {
+      var keyA = a[property].toLowerCase();
+      var keyB = b[property].toLowerCase();
+      if (keyA < keyB) return -1;
+      if (keyA > keyB) return 1;
+      return 0;
+    });
+    this.setState({ tasksSorted: helper });
+    helper = [];
+  };
+
   showClicked = (e) => {
     this.setState({
       impClicked: false,
@@ -18,6 +29,15 @@ export default class ListToDo extends Component {
     });
     if (e.target.id) {
       this.setState({ [e.target.id]: true });
+    }
+    if (e.target.id === "impClicked") {
+      this.sortTasks("importance");
+    }
+    if (e.target.id === "deadClicked") {
+      this.sortTasks("deadline");
+    }
+    if (e.target.id === "titleClicked") {
+      this.sortTasks("title");
     }
   };
   render() {
@@ -66,9 +86,15 @@ export default class ListToDo extends Component {
           </button>
         </section>
         <section className="my-card-deck">
-          {this.props.tasks.map((task, index) => (
-            <Item key={`task-${index + 1}`} task={task} />
-          ))}
+          {this.state.impClicked ||
+          this.state.deadClicked ||
+          this.state.titleClicked
+            ? this.state.tasksSorted.map((task, index) => (
+                <Item key={`task-${index + 1}`} task={task} />
+              ))
+            : this.props.tasks.map((task, index) => (
+                <Item key={`task-${index + 1}`} task={task} />
+              ))}
         </section>
       </React.Fragment>
     );

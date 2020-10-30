@@ -17,10 +17,10 @@ export default class App extends Component {
           "Learn React really in deep during my dci course, using FEM videos and Udemy course from Colt Steele",
       },
       {
-        title: "final presentation",
-        deadline: "2021-03-23",
-        importance: "2",
-        description: "Presentation of our final projects. last day in DCI.",
+        title: "silvester",
+        deadline: "2020-12-31",
+        importance: "4",
+        description: "Finally end of this horror year!!!!",
       },
       {
         title: "Christmas",
@@ -30,10 +30,10 @@ export default class App extends Component {
           "Although there is covid, still celebrate Christmas at least a bit!",
       },
       {
-        title: "silvester",
-        deadline: "2020-12-31",
-        importance: 4,
-        description: "Finally end of this horror year!!!!",
+        title: "final presentation",
+        deadline: "2021-03-23",
+        importance: "2",
+        description: "Presentation of our final projects. last day in DCI.",
       },
     ],
     styleAddToDo: {
