@@ -8,7 +8,7 @@ For basic showing of the function, four static tasks were added as a default (bu
 
 Currently serverless, just front-end with React.
 
-<img align="right" src="./README-materials/image.png" width="60%">
+<img align="right" src="./README-materials/image.png" width="70%">
 
 **Current functionalities (omega version):**
 
