@@ -45,7 +45,11 @@ export default class ListToDo extends Component {
       <React.Fragment>
         <section className="buttons-group">
           <button
-            className="btn btn-lg btn-list"
+            className={
+              this.state.impClicked
+                ? "btn btn-lg btn-list sort-active"
+                : "btn btn-lg btn-list"
+            }
             id="impClicked"
             onClick={this.showClicked}
           >
@@ -57,7 +61,11 @@ export default class ListToDo extends Component {
             Importance
           </button>
           <button
-            className="btn btn-lg btn-list"
+            className={
+              this.state.deadClicked
+                ? "btn btn-lg btn-list sort-active"
+                : "btn btn-lg btn-list"
+            }
             id="deadClicked"
             onClick={this.showClicked}
           >
@@ -69,7 +77,11 @@ export default class ListToDo extends Component {
             Deadline
           </button>
           <button
-            className="btn btn-lg btn-list"
+            className={
+              this.state.titleClicked
+                ? "btn btn-lg btn-list sort-active"
+                : "btn btn-lg btn-list"
+            }
             id="titleClicked"
             onClick={this.showClicked}
           >

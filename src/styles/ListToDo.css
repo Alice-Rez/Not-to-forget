@@ -17,3 +17,7 @@
 span {
   font-weight: 600;
 }
+
+.sort-active {
+  color: var(--black);
+}
