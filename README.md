@@ -12,7 +12,17 @@ Currently serverless, just front-end with React.
 
 **Current functionalities (omega version):**
 
-- adding new
+- adding new to-do item (title, deadline and level of importance are mandatory, details are obligatory, forms reset after adding item)
+
+- list all of the to-do item
+
+- importance of the task is also depicted by color of used pin (purple for the most important, green for the least)
+
+- sorting listed items according to their importance, deadline or alphabetically by title with possible reset to default order (the order they were added in)
+
+- searching for the to-do with specific name
+
+- basic autocomplete function showing all names of existing items that corresponds to the typed search keyword
 
 ## Setup
 
