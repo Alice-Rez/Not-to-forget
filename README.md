@@ -8,11 +8,11 @@ For basic showing of the function, four static tasks were added as a default (bu
 
 Currently serverless, just front-end with React.
 
-<img align="right" src="./README-materials/image.png" width="70%">
-
 **Current functionalities (omega version):**
 
 - adding new to-do item (title, deadline and level of importance are mandatory, details are obligatory, forms reset after adding item)
+
+<img align="right" src="./README-materials/image.png" width="70%">
 
 - list all of the to-do item
 
