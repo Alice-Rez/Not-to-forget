@@ -35,3 +35,11 @@ Currently serverless, just front-end with React.
    npm start
    ```
 4. Enjoy
+
+## Implementation
+
+**Used technologies**: React, Create React App, React Router, customized sorting function in sort, JSX, CSS, CSS variables, Bootstrap, SVG
+
+For the project configuration was used Create React App package.
+
+Bootstrap was used for basic styling but heavily customized.
