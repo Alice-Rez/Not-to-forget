@@ -35,6 +35,13 @@ export default class App extends Component {
         importance: "2",
         description: "Presentation of our final projects. last day in DCI.",
       },
+      {
+        title: "Halloween",
+        deadline: "2020-10-31",
+        importance: "4",
+        description: "Definitely do not celebrate Halloween this year!",
+        finished: true,
+      },
     ],
     styleAddToDo: {
       opacity: "0",

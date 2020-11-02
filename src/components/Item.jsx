@@ -3,6 +3,7 @@ import pin1 from "../images/pin-lila.png";
 import pin2 from "../images/pin-red.png";
 import pin3 from "../images/pin-yellow.png";
 import pin4 from "../images/pin-green.png";
+import tickFinished from "../images/tickV1.svg";
 
 export default function Item(props) {
   const levels = [
@@ -36,7 +37,7 @@ export default function Item(props) {
   return (
     <article className="border card-white">
       <figure>
-        <img src={pin} alt="" />
+        <img src={pin} alt="pin image" />
       </figure>
       <h3>{props.task.title}</h3>
       <p className="test">
@@ -50,6 +51,12 @@ export default function Item(props) {
         <strong>Details:</strong>
       </p>
       <p>{props.task.description}</p>
+      <figure>
+        {props.task.finished ? (
+          <img src={tickFinished} alt="finished indicator icon" />
+        ) : null}
+      </figure>
+      <div className="icons"></div>
     </article>
   );
 }
