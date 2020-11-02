@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { myContext } from "./context.jsx";
 import pin1 from "../images/pin-lila.png";
 import pin2 from "../images/pin-red.png";
 import pin3 from "../images/pin-yellow.png";
@@ -15,6 +16,8 @@ export default function Item(props) {
     "No rush......",
     "Too early to just think about it",
   ];
+
+  const deleteTasksApp = useContext(myContext);
 
   let pin;
 
@@ -36,6 +39,12 @@ export default function Item(props) {
   };
 
   choosePin(parseInt(props.task.importance));
+
+  const deleteTask = (e) => {
+    console.log("deleting-task-item");
+    let task = e.target.id.split("-")[0];
+    deleteTasksApp(task);
+  };
 
   return (
     <article className="border card-white">
@@ -64,7 +73,11 @@ export default function Item(props) {
         ) : null}
       </figure>
       <div className="icons">
-        <button className="btn btn-icon" title="task finished">
+        <button
+          className="btn btn-icon"
+          title="task finished"
+          id={`${props.task.title}-finish`}
+        >
           <img src={tickV2} alt="task finished icon" role="presentation" />
         </button>
         <button
@@ -72,10 +85,24 @@ export default function Item(props) {
           title="edit task"
           disabled={props.task.finished ? true : false}
         >
-          <img src={edit} alt="task finished icon" role="presentation" />
+          <img
+            src={edit}
+            alt="task finished icon"
+            role="presentation"
+            id={`${props.task.title}-edit`}
+          />
         </button>
-        <button className="btn btn-icon" title="delete task">
-          <img src={cross} alt="task finished icon" role="presentation" />
+        <button
+          className="btn btn-icon"
+          title="delete task"
+          onClick={deleteTask}
+        >
+          <img
+            src={cross}
+            alt="task finished icon"
+            role="presentation"
+            id={`${props.task.title}-delete`}
+          />
         </button>
       </div>
     </article>
