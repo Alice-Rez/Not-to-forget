@@ -4,6 +4,9 @@ import pin2 from "../images/pin-red.png";
 import pin3 from "../images/pin-yellow.png";
 import pin4 from "../images/pin-green.png";
 import tickFinished from "../images/tickV1.svg";
+import tickV2 from "../images/tickV2.svg";
+import cross from "../images/cross.svg";
+import edit from "../images/edit.svg";
 
 export default function Item(props) {
   const levels = [
@@ -37,7 +40,7 @@ export default function Item(props) {
   return (
     <article className="border card-white">
       <figure>
-        <img src={pin} alt="pin image" />
+        <img className="img-smaller" src={pin} alt="pin" />
       </figure>
       <h3>{props.task.title}</h3>
       <p className="test">
@@ -53,10 +56,28 @@ export default function Item(props) {
       <p>{props.task.description}</p>
       <figure>
         {props.task.finished ? (
-          <img src={tickFinished} alt="finished indicator icon" />
+          <img
+            className="img-larger"
+            src={tickFinished}
+            alt="finished indicator icon"
+          />
         ) : null}
       </figure>
-      <div className="icons"></div>
+      <div className="icons">
+        <button className="btn btn-icon" title="task finished">
+          <img src={tickV2} alt="task finished icon" role="presentation" />
+        </button>
+        <button
+          className="btn btn-icon"
+          title="edit task"
+          disabled={props.task.finished ? true : false}
+        >
+          <img src={edit} alt="task finished icon" role="presentation" />
+        </button>
+        <button className="btn btn-icon" title="delete task">
+          <img src={cross} alt="task finished icon" role="presentation" />
+        </button>
+      </div>
     </article>
   );
 }
