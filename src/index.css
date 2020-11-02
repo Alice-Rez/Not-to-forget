@@ -73,6 +73,9 @@ textarea {
   background-color: var(--white);
   box-shadow: 5px 5px 15px var(--shadow-dark),
     -5px -5px 15px var(--shadow-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 article {
