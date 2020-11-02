@@ -17,7 +17,7 @@ export default function Item(props) {
     "Too early to just think about it",
   ];
 
-  const { deleteTask, tasks } = useContext(myContext);
+  const { deleteTask } = useContext(myContext);
 
   let pin;
 
@@ -39,8 +39,6 @@ export default function Item(props) {
   };
 
   choosePin(parseInt(props.task.importance));
-
-  console.log(tasks);
 
   const deleteItem = (e) => {
     console.log("deleting-task-item");
