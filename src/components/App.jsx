@@ -65,7 +65,9 @@ export default class App extends Component {
 
   render() {
     return (
-      <myContext.Provider value={this.deleteTask}>
+      <myContext.Provider
+        value={{ deleteTask: this.deleteTask, tasks: this.state.tasks }}
+      >
         <Router>
           <Header />
           <main className="p-3">

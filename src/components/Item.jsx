@@ -17,7 +17,7 @@ export default function Item(props) {
     "Too early to just think about it",
   ];
 
-  const deleteTasksApp = useContext(myContext);
+  const { deleteTask, tasks } = useContext(myContext);
 
   let pin;
 
@@ -40,10 +40,12 @@ export default function Item(props) {
 
   choosePin(parseInt(props.task.importance));
 
-  const deleteTask = (e) => {
+  console.log(tasks);
+
+  const deleteItem = (e) => {
     console.log("deleting-task-item");
     let task = e.target.id.split("-")[0];
-    deleteTasksApp(task);
+    deleteTask(task);
   };
 
   return (
@@ -95,7 +97,7 @@ export default function Item(props) {
         <button
           className="btn btn-icon"
           title="delete task"
-          onClick={deleteTask}
+          onClick={deleteItem}
         >
           <img
             src={cross}
