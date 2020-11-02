@@ -76,6 +76,7 @@ textarea {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
 }
 
 article {
@@ -93,4 +94,8 @@ article {
 
 .btn:hover {
   transform: scale(1.1);
+}
+
+.btn:disabled {
+  box-shadow: none;
 }
