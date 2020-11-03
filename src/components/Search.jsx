@@ -15,6 +15,7 @@ export default function Search(props) {
             <input
               type="text"
               className="form-control form-control-lg"
+              aria-labelledby="searchButton"
               id="search"
               name="search"
               value={input}
@@ -39,6 +40,7 @@ export default function Search(props) {
             </ul>
           </div>
           <button
+            id="searchButton"
             type="submit"
             className="btn btn-search mb-2 btn-lg"
             onClick={(e) => {
@@ -46,17 +48,6 @@ export default function Search(props) {
               props.tasks.map((task) =>
                 input === task.title ? setItem(task) : null
               );
-              // console.log("clicked");
-              // console.log(props.tasks);
-              // console.log(input);
-              // props.tasks.map((item, index) => {
-              //   console.log(item.title);
-              //   console.log(input === item.title);
-              //   if (input === item.title) {
-              //     console.log(item);
-              //     return <Item key={`task-${index + 1}`} task={item} />;
-              //   }
-              // });
             }}
           >
             Search items
