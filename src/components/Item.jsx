@@ -1,13 +1,10 @@
-import React, { useContext, useState } from "react";
-import { myContext } from "./context.jsx";
+import React, { useState } from "react";
 import pin1 from "../images/pin-lila.png";
 import pin2 from "../images/pin-red.png";
 import pin3 from "../images/pin-yellow.png";
 import pin4 from "../images/pin-green.png";
 import tickFinished from "../images/tickV1.svg";
-import tickV2 from "../images/tickV2.svg";
-import cross from "../images/cross.svg";
-import edit from "../images/edit.svg";
+import ItemEditButtons from "./ItemEditButtons.jsx";
 
 export default function Item(props) {
   const levels = [
@@ -17,8 +14,6 @@ export default function Item(props) {
     "Too early to just think about it",
   ];
   const [toDelete, setToDelete] = useState(false);
-
-  const { deleteTask } = useContext(myContext);
 
   let pin;
 
@@ -40,12 +35,6 @@ export default function Item(props) {
   };
 
   choosePin(parseInt(props.task.importance));
-
-  const deleteItem = (e) => {
-    console.log("deleting-task-item");
-    let task = e.target.id.split("-")[0];
-    deleteTask(task);
-  };
 
   return (
     <article className="border card-white">
@@ -73,39 +62,11 @@ export default function Item(props) {
           />
         ) : null}
       </figure>
-      <div className="icons">
-        <button
-          className="btn btn-icon"
-          title="task finished"
-          id={`${props.task.title}-finish`}
-        >
-          <img src={tickV2} alt="task finished icon" role="presentation" />
-        </button>
-        <button
-          className="btn btn-icon"
-          title="edit task"
-          disabled={props.task.finished ? true : false}
-        >
-          <img
-            src={edit}
-            alt="task finished icon"
-            role="presentation"
-            id={`${props.task.title}-edit`}
-          />
-        </button>
-        <button
-          className="btn btn-icon"
-          title="delete task"
-          onClick={deleteItem}
-        >
-          <img
-            src={cross}
-            alt="task finished icon"
-            role="presentation"
-            id={`${props.task.title}-delete`}
-          />
-        </button>
-      </div>
+      <ItemEditButtons
+        title={props.task.title}
+        finished={props.task.finished}
+        setToDelete={setToDelete}
+      />
     </article>
   );
 }
