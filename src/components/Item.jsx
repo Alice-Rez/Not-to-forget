@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { myContext } from "./context.jsx";
 import pin1 from "../images/pin-lila.png";
 import pin2 from "../images/pin-red.png";
@@ -16,6 +16,7 @@ export default function Item(props) {
     "No rush......",
     "Too early to just think about it",
   ];
+  const [toDelete, setToDelete] = useState(false);
 
   const { deleteTask } = useContext(myContext);
 
