@@ -33,12 +33,17 @@ export default function ItemEditButtons(props) {
           id={`${props.title}-edit`}
         />
       </button>
-      <button className="btn btn-icon" title="delete task" onClick={deleteItem}>
+      <button
+        className="btn btn-icon"
+        title="delete task"
+        id={`${props.title}-delete`}
+        onClick={deleteItem}
+      >
         <img
           src={cross}
           alt="task finished icon"
           role="presentation"
-          id={`${props.title}-delete`}
+          id={`${props.title}-deleteImage`}
         />
       </button>
     </div>
