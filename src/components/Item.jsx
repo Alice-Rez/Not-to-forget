@@ -5,6 +5,7 @@ import pin3 from "../images/pin-yellow.png";
 import pin4 from "../images/pin-green.png";
 import tickFinished from "../images/tickV1.svg";
 import ItemEditButtons from "./ItemEditButtons.jsx";
+import AlertDelete from "./AlertDelete.jsx";
 
 export default function Item(props) {
   const levels = [
@@ -62,11 +63,15 @@ export default function Item(props) {
           />
         ) : null}
       </figure>
-      <ItemEditButtons
-        title={props.task.title}
-        finished={props.task.finished}
-        setToDelete={setToDelete}
-      />
+      {toDelete ? (
+        <AlertDelete />
+      ) : (
+        <ItemEditButtons
+          title={props.task.title}
+          finished={props.task.finished}
+          setToDelete={setToDelete}
+        />
+      )}
     </article>
   );
 }

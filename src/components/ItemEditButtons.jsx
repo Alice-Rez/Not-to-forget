@@ -11,6 +11,10 @@ export default function ItemEditButtons(props) {
     deleteTask(props.title);
   };
 
+  const wantDelete = () => {
+    props.setToDelete(true);
+  };
+
   return (
     <div className="icons">
       <button className="btn btn-icon" title="task finished">
@@ -23,11 +27,7 @@ export default function ItemEditButtons(props) {
       >
         <img src={edit} alt="task finished icon" role="presentation" />
       </button>
-      <button
-        className="btn btn-icon btn-delete"
-        title="delete task"
-        onClick={deleteItem}
-      >
+      <button className="btn btn-icon" title="delete task" onClick={wantDelete}>
         <img src={cross} alt="delete task icon" role="presentation" />
       </button>
     </div>
