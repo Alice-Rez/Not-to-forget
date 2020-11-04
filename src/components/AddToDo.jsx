@@ -11,15 +11,10 @@ export default class AddToDo extends Component {
     });
   };
 
-  componentDidMount() {
-    this.props.changeStyle("styleAddToDo", "opacity", "1");
-  }
-
   render() {
     return (
       <section className="section-main">
         <form
-          style={this.props.myStyle}
           action=""
           className="text-center d-flex flex-column align-items-center col-sm-12 mx-auto"
           onSubmit={(e) => {
