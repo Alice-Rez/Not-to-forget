@@ -67,7 +67,6 @@ export default class App extends Component {
       }
       return item;
     });
-    console.log(result);
     this.setState({ tasks: result });
     result = [];
   };
