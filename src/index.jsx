@@ -10,6 +10,7 @@ import "./styles/Search.css";
 import "./styles/ListToDo.css";
 import "./styles/Item.css";
 import "./styles/ItemEditButtons.css";
+import "./styles/AlertDelete.css";
 import "./styles/Help.css";
 
 ReactDOM.render(<App />, document.getElementById("root"));
