@@ -5,7 +5,7 @@ import Item from "./Item";
 export default function Search(props) {
   const [input, setInput] = useState("");
   const [visible, setVisible] = useState(true);
-  const [item, setItem] = useState("");
+  const [showItem, setShowItem] = useState(false);
 
   return (
     <React.Fragment>
@@ -20,6 +20,11 @@ export default function Search(props) {
               name="search"
               value={input}
               onInput={(e) => {
+                setShowItem(false);
+                setInput(e.target.value);
+                setVisible(true);
+              }}
+              onChange={(e) => {
                 setInput(e.target.value);
                 setVisible(true);
               }}
@@ -45,9 +50,8 @@ export default function Search(props) {
             className="btn btn-search mb-2 btn-lg"
             onClick={(e) => {
               e.preventDefault();
-              props.tasks.map((task) =>
-                input === task.title ? setItem(task) : null
-              );
+              setVisible(false);
+              setShowItem(true);
             }}
           >
             Search items
@@ -55,7 +59,14 @@ export default function Search(props) {
         </form>
       </section>
       <section className="search-results">
-        {item ? <Item task={item} /> : null}
+        {showItem
+          ? props.tasks.map((task) => {
+              if (input === task.title) {
+                return <Item task={task} />;
+              }
+              return null;
+            })
+          : null}
       </section>
     </React.Fragment>
   );
