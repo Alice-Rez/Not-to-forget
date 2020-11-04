@@ -8,6 +8,7 @@ export default function ItemEditButtons(props) {
   const { deleteTask } = useContext(myContext);
 
   const deleteItem = (e) => {
+    console.log(e.target);
     let task = e.target.id.split("-")[0];
     deleteTask(task);
   };
@@ -34,14 +35,14 @@ export default function ItemEditButtons(props) {
         />
       </button>
       <button
-        className="btn btn-icon"
+        className="btn btn-icon btn-delete"
         title="delete task"
         id={`${props.title}-delete`}
         onClick={deleteItem}
       >
         <img
           src={cross}
-          alt="task finished icon"
+          alt="delete task icon"
           role="presentation"
           id={`${props.title}-deleteImage`}
         />
