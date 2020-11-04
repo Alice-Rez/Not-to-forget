@@ -66,6 +66,8 @@ textarea {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  /* align-items: flex-start; */
+  /*In dependence if I want the regular cards or different heights.....  */
 }
 
 .card-white {
