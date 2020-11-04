@@ -64,7 +64,7 @@ export default function Item(props) {
         ) : null}
       </figure>
       {toDelete ? (
-        <AlertDelete />
+        <AlertDelete title={props.task.title} setToDelete={setToDelete} />
       ) : (
         <ItemEditButtons
           title={props.task.title}

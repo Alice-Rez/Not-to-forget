@@ -1,16 +1,9 @@
-import React, { useContext } from "react";
-import { myContext } from "./context.jsx";
+import React from "react";
 import tickV2 from "../images/tickV2.svg";
 import cross from "../images/cross.svg";
 import edit from "../images/edit.svg";
 
 export default function ItemEditButtons(props) {
-  const { deleteTask } = useContext(myContext);
-
-  const deleteItem = (e) => {
-    deleteTask(props.title);
-  };
-
   const wantDelete = () => {
     props.setToDelete(true);
   };
