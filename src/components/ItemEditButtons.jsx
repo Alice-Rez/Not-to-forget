@@ -19,7 +19,7 @@ export default function ItemEditButtons(props) {
       <button
         className="btn btn-icon"
         title="edit task"
-        disabled={props.finished ? true : false}
+        disabled={props.finished}
       >
         <img src={edit} alt="task finished icon" role="presentation" />
       </button>
