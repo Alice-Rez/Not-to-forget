@@ -44,9 +44,6 @@ export default class App extends Component {
         finished: true,
       },
     ],
-    styleAddToDo: {
-      opacity: "0",
-    },
   };
 
   addTask = (task) => {
@@ -54,13 +51,25 @@ export default class App extends Component {
   };
 
   deleteTask = (task) => {
-    console.log("deleting-task-app");
     let result = this.state.tasks.filter((item) => item.title !== task);
     this.setState({ tasks: result });
+    result = [];
   };
 
-  changeStyle = (name, property, value) => {
-    this.setState({ [name]: { ...this.state[name], [property]: value } });
+  checkTask = (task) => {
+    let result = this.state.tasks.map((item) => {
+      if (item.title === task) {
+        if (item.finished) {
+          return { ...item, finished: !item.finished };
+        } else {
+          return { ...item, finished: true };
+        }
+      }
+      return item;
+    });
+    console.log(result);
+    this.setState({ tasks: result });
+    result = [];
   };
 
   render() {
@@ -72,7 +81,6 @@ export default class App extends Component {
             <Switch>
               <Route path="/add">
                 <AddToDo
-                  myStyle={this.state.styleAddToDo}
                   addTask={this.addTask}
                   changeStyle={this.changeStyle}
                 />
