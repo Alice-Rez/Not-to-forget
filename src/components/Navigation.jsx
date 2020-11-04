@@ -14,7 +14,7 @@ export default class Navigation extends Component {
             role="presentation"
             focusable="false"
           >
-            <g id="circle" fill-opacity="1">
+            <g id="circle">
               <circle
                 id="path1453"
                 cx="7.9812"
@@ -39,7 +39,7 @@ export default class Navigation extends Component {
             role="presentation"
             focusable="false"
           >
-            <g id="layer1" fill-opacity="1">
+            <g id="layer1">
               <circle
                 id="path1453"
                 cx="7.981"
@@ -89,7 +89,7 @@ export default class Navigation extends Component {
             role="presentation"
             focusable="false"
           >
-            <g id="layer1" fill-opacity="1">
+            <g id="layer1">
               <circle
                 id="path1453"
                 cx="7.981"
@@ -114,7 +114,7 @@ export default class Navigation extends Component {
             role="presentation"
             focusable="false"
           >
-            <g id="layer1" fill-opacity="1">
+            <g id="layer1">
               <circle
                 id="path1453"
                 cx="7.981"
