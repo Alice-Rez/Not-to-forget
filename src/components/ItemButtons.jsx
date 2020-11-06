@@ -17,6 +17,10 @@ export default function ItemEditButtons(props) {
     checkTask(task.title);
   };
 
+  const wantEdit = () => {
+    props.setToEdit(true);
+  };
+
   return (
     <div className="icons">
       <button
@@ -30,6 +34,7 @@ export default function ItemEditButtons(props) {
         className="btn btn-icon"
         title="edit task"
         disabled={task.finished}
+        onClick={wantEdit}
       >
         <img src={edit} alt="task finished icon" role="presentation" />
       </button>
