@@ -1,7 +1,8 @@
 import React, { useState, useContext } from "react";
 import { itemContext } from "./context";
 import ItemContent from "./ItemContent";
-import ItemEditButtons from "./ItemEditButtons.jsx";
+import ItemEdit from "./ItemEdit";
+import ItemEditButtons from "./ItemButtons.jsx";
 import AlertDelete from "./AlertDelete.jsx";
 import pin1 from "../images/pin-lila.png";
 import pin2 from "../images/pin-red.png";
@@ -16,6 +17,7 @@ export default function Item() {
     "Too early to just think about it",
   ];
   const [toDelete, setToDelete] = useState(false);
+  const [toEdit, setToEdit] = useState(false);
 
   const task = useContext(itemContext);
 
@@ -45,11 +47,11 @@ export default function Item() {
       <figure>
         <img className="img-smaller" src={pin} alt="pin" />
       </figure>
-      <ItemContent levels={levels} />
+      {toEdit ? <ItemEdit levels={levels} /> : <ItemContent levels={levels} />}
       {toDelete ? (
         <AlertDelete title={task.title} setToDelete={setToDelete} />
       ) : (
-        <ItemEditButtons setToDelete={setToDelete} />
+        <ItemEditButtons setToDelete={setToDelete} setToEdit={setToEdit} />
       )}
     </article>
   );
