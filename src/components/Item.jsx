@@ -48,11 +48,11 @@ export default function Item() {
         <img className="img-smaller" src={pin} alt="pin" />
       </figure>
       {toEdit ? <ItemEdit levels={levels} /> : <ItemContent levels={levels} />}
-      {toDelete ? (
-        <AlertDelete title={task.title} setToDelete={setToDelete} />
-      ) : (
+      {!toDelete && !toEdit ? (
         <ItemEditButtons setToDelete={setToDelete} setToEdit={setToEdit} />
-      )}
+      ) : toDelete ? (
+        <AlertDelete title={task.title} setToDelete={setToDelete} />
+      ) : null}
     </article>
   );
 }
