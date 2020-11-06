@@ -1,7 +1,8 @@
 import React, { useContext, useState } from "react";
-import { itemContext } from "./context";
+import { itemContext, myContext } from "./context";
 
 export default function ItemContent(props) {
+  const { editTask } = useContext(myContext);
   const task = useContext(itemContext);
   const [change, setChange] = useState({
     title: task.title,
@@ -10,7 +11,9 @@ export default function ItemContent(props) {
     description: task.description,
   });
 
-  const finishEdit = () => {
+  const finishEdit = (e) => {
+    e.preventDefault();
+    editTask(task.title, change);
     props.setToEdit(false);
   };
 
@@ -22,7 +25,7 @@ export default function ItemContent(props) {
   };
 
   return (
-    <form>
+    <form onSubmit={finishEdit}>
       <input
         type="text"
         name="title"
@@ -76,7 +79,7 @@ export default function ItemContent(props) {
           onInput={getValue}
         />
       </div>
-      <button className="btn btn-edit" onClick={finishEdit}>
+      <button type="submit" className="btn btn-edit">
         Edit Item
       </button>
     </form>
