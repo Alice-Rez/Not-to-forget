@@ -14,6 +14,13 @@ export default function ItemContent(props) {
     props.setToEdit(false);
   };
 
+  const getValue = (e) => {
+    setChange({
+      ...change,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   return (
     <form>
       <input
@@ -21,14 +28,16 @@ export default function ItemContent(props) {
         name="title"
         id="title"
         className="form-control h3 edit-input"
-        value={task.title}
+        value={change.title}
+        onInput={getValue}
       />
       <input
         type="date"
         name="deadline"
         id="deadline"
         className="form-control edit-input"
-        value={task.deadline}
+        value={change.deadline}
+        onInput={getValue}
       />
       <div className="form-group mt-3">
         <label htmlFor="importance">Importance:</label>
@@ -36,15 +45,16 @@ export default function ItemContent(props) {
           name="importance"
           id="importance"
           className="form-control edit-input"
+          onChange={getValue}
         >
-          <option value={task.importance - 1}>
-            {props.levels[task.importance - 1]}
+          <option value={change.importance - 1}>
+            {props.levels[change.importance - 1]}
           </option>
           {props.levels.map((item, index) => {
-            if (index !== Number(task.importance - 1)) {
+            if (index !== Number(change.importance - 1)) {
               console.log("gotcha");
               return (
-                <option value={index} key={item}>
+                <option value={index + 1} key={item}>
                   {item}
                 </option>
               );
@@ -62,7 +72,8 @@ export default function ItemContent(props) {
           name="description"
           id="description"
           className="form-control edit-input"
-          value={task.description}
+          value={change.description}
+          onInput={getValue}
         />
       </div>
       <button className="btn btn-edit" onClick={finishEdit}>
