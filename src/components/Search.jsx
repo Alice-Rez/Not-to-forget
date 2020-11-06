@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { itemContext } from "./context";
 import SearchItem from "./SearchItem";
 import Item from "./Item";
 
@@ -60,9 +61,13 @@ export default function Search(props) {
       </section>
       <section className="search-results">
         {showItem
-          ? props.tasks.map((task) => {
+          ? props.tasks.map((task, index) => {
               if (input === task.title) {
-                return <Item task={task} />;
+                return (
+                  <itemContext.Provider value={task} key={`task-${index + 1}`}>
+                    <Item />
+                  </itemContext.Provider>
+                );
               }
               return null;
             })
