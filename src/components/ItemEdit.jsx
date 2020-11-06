@@ -5,6 +5,10 @@ import tickFinished from "../images/tickV1.svg";
 export default function ItemContent(props) {
   const task = useContext(itemContext);
 
+  const finishEdit = () => {
+    props.setToEdit(false);
+  };
+
   return (
     <React.Fragment>
       <input className="h3" type="text" value={task.title} />
@@ -17,15 +21,9 @@ export default function ItemContent(props) {
         <strong>Details:</strong>
       </p>
       <p>{task.description}</p>
-      <figure>
-        {task.finished ? (
-          <img
-            className="img-larger"
-            src={tickFinished}
-            alt="finished indicator icon"
-          />
-        ) : null}
-      </figure>
+      <button className="btn btn-edit" onClick={finishEdit}>
+        Edit Item
+      </button>
     </React.Fragment>
   );
 }

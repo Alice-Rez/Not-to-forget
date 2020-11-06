@@ -47,7 +47,11 @@ export default function Item() {
       <figure>
         <img className="img-smaller" src={pin} alt="pin" />
       </figure>
-      {toEdit ? <ItemEdit levels={levels} /> : <ItemContent levels={levels} />}
+      {toEdit ? (
+        <ItemEdit levels={levels} setToEdit={setToEdit} />
+      ) : (
+        <ItemContent levels={levels} />
+      )}
       {!toDelete && !toEdit ? (
         <ItemEditButtons setToDelete={setToDelete} setToEdit={setToEdit} />
       ) : toDelete ? (

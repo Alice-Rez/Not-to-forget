@@ -16,3 +16,7 @@ figure {
 .img-larger {
   width: 50%;
 }
+
+.btn-edit {
+  color: var(--add);
+}
