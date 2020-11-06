@@ -1,14 +1,14 @@
 import React, { useState, useContext } from "react";
+import { itemContext } from "./context";
+import ItemContent from "./ItemContent";
+import ItemEditButtons from "./ItemEditButtons.jsx";
+import AlertDelete from "./AlertDelete.jsx";
 import pin1 from "../images/pin-lila.png";
 import pin2 from "../images/pin-red.png";
 import pin3 from "../images/pin-yellow.png";
 import pin4 from "../images/pin-green.png";
-import tickFinished from "../images/tickV1.svg";
-import ItemEditButtons from "./ItemEditButtons.jsx";
-import AlertDelete from "./AlertDelete.jsx";
-import { itemContext } from "./context";
 
-export default function Item(props) {
+export default function Item() {
   const levels = [
     "Yesterday was late",
     "It is time to look at it ;)",
@@ -45,25 +45,7 @@ export default function Item(props) {
       <figure>
         <img className="img-smaller" src={pin} alt="pin" />
       </figure>
-      <h3>{task.title}</h3>
-      <p className="test">{task.deadline.split("-").reverse().join(".")}</p>
-      <p>
-        <strong>Importance:</strong>
-      </p>
-      <p>{levels[task.importance - 1]}</p>
-      <p>
-        <strong>Details:</strong>
-      </p>
-      <p>{task.description}</p>
-      <figure>
-        {task.finished ? (
-          <img
-            className="img-larger"
-            src={tickFinished}
-            alt="finished indicator icon"
-          />
-        ) : null}
-      </figure>
+      <ItemContent levels={levels} />
       {toDelete ? (
         <AlertDelete title={task.title} setToDelete={setToDelete} />
       ) : (

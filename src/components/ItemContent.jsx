@@ -1,25 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
+import { itemContext } from "./context";
+import tickFinished from "../images/tickV1.svg";
 
-export default function ItemContent() {
+export default function ItemContent(props) {
+  const task = useContext(itemContext);
+
   return (
     <React.Fragment>
-      <figure>
-        <img className="img-smaller" src={pin} alt="pin" />
-      </figure>
-      <h3>{props.task.title}</h3>
-      <p className="test">
-        {props.task.deadline.split("-").reverse().join(".")}
-      </p>
+      <h3>{task.title}</h3>
+      <p className="test">{task.deadline.split("-").reverse().join(".")}</p>
       <p>
         <strong>Importance:</strong>
       </p>
-      <p>{levels[props.task.importance - 1]}</p>
+      <p>{props.levels[task.importance - 1]}</p>
       <p>
         <strong>Details:</strong>
       </p>
-      <p>{props.task.description}</p>
+      <p>{task.description}</p>
       <figure>
-        {props.task.finished ? (
+        {task.finished ? (
           <img
             className="img-larger"
             src={tickFinished}
