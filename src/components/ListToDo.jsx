@@ -103,14 +103,14 @@ export default class ListToDo extends Component {
           this.state.deadClicked ||
           this.state.titleClicked
             ? this.state.tasksSorted.map((task, index) => (
-                <itemContext.Provider value={task}>
-                  <Item key={`task-${index + 1}`} task={task} />
+                <itemContext.Provider value={task} key={`task-${index + 1}`}>
+                  <Item />
                 </itemContext.Provider>
               ))
             : this.props.tasks.map((task, index) => (
-                <itemContext.Provider value={task}>
+                <itemContext.Provider value={task} key={`task-${index + 1}`}>
                   {" "}
-                  <Item key={`task-${index + 1}`} task={task} />
+                  <Item />
                 </itemContext.Provider>
               ))}
         </section>
