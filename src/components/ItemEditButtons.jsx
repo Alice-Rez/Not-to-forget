@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { myContext } from "./context.jsx";
+import { itemContext, myContext } from "./context.jsx";
 import tickV2 from "../images/tickV2.svg";
 import cross from "../images/cross.svg";
 import edit from "../images/edit.svg";
@@ -7,12 +7,14 @@ import edit from "../images/edit.svg";
 export default function ItemEditButtons(props) {
   const { checkTask } = useContext(myContext);
 
+  const task = useContext(itemContext);
+
   const wantDelete = () => {
     props.setToDelete(true);
   };
 
   const wantCheck = () => {
-    checkTask(props.title);
+    checkTask(task.title);
   };
 
   return (
@@ -27,7 +29,7 @@ export default function ItemEditButtons(props) {
       <button
         className="btn btn-icon"
         title="edit task"
-        disabled={props.finished}
+        disabled={task.finished}
       >
         <img src={edit} alt="task finished icon" role="presentation" />
       </button>

@@ -1,11 +1,13 @@
 import React, { useContext } from "react";
-import { myContext } from "./context.jsx";
+import { itemContext, myContext } from "./context.jsx";
 
 export default function AlertDelete(props) {
   const { deleteTask } = useContext(myContext);
 
+  const task = useContext(itemContext);
+
   const deleteItem = (e) => {
-    deleteTask(props.title);
+    deleteTask(task.title);
     props.setToDelete(false);
   };
 

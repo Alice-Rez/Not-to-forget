@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { itemContext } from "./context";
 import Item from "./Item";
 
 export default class ListToDo extends Component {
@@ -102,10 +103,15 @@ export default class ListToDo extends Component {
           this.state.deadClicked ||
           this.state.titleClicked
             ? this.state.tasksSorted.map((task, index) => (
-                <Item key={`task-${index + 1}`} task={task} />
+                <itemContext.Provider value={task}>
+                  <Item key={`task-${index + 1}`} task={task} />
+                </itemContext.Provider>
               ))
             : this.props.tasks.map((task, index) => (
-                <Item key={`task-${index + 1}`} task={task} />
+                <itemContext.Provider value={task}>
+                  {" "}
+                  <Item key={`task-${index + 1}`} task={task} />
+                </itemContext.Provider>
               ))}
         </section>
       </React.Fragment>

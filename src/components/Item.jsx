@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import pin1 from "../images/pin-lila.png";
 import pin2 from "../images/pin-red.png";
 import pin3 from "../images/pin-yellow.png";
@@ -6,6 +6,7 @@ import pin4 from "../images/pin-green.png";
 import tickFinished from "../images/tickV1.svg";
 import ItemEditButtons from "./ItemEditButtons.jsx";
 import AlertDelete from "./AlertDelete.jsx";
+import { itemContext } from "./context";
 
 export default function Item(props) {
   const levels = [
@@ -15,6 +16,8 @@ export default function Item(props) {
     "Too early to just think about it",
   ];
   const [toDelete, setToDelete] = useState(false);
+
+  const task = useContext(itemContext);
 
   let pin;
 
@@ -35,27 +38,25 @@ export default function Item(props) {
     }
   };
 
-  choosePin(parseInt(props.task.importance));
+  choosePin(parseInt(task.importance));
 
   return (
     <article className="border card-white">
       <figure>
         <img className="img-smaller" src={pin} alt="pin" />
       </figure>
-      <h3>{props.task.title}</h3>
-      <p className="test">
-        {props.task.deadline.split("-").reverse().join(".")}
-      </p>
+      <h3>{task.title}</h3>
+      <p className="test">{task.deadline.split("-").reverse().join(".")}</p>
       <p>
         <strong>Importance:</strong>
       </p>
-      <p>{levels[props.task.importance - 1]}</p>
+      <p>{levels[task.importance - 1]}</p>
       <p>
         <strong>Details:</strong>
       </p>
-      <p>{props.task.description}</p>
+      <p>{task.description}</p>
       <figure>
-        {props.task.finished ? (
+        {task.finished ? (
           <img
             className="img-larger"
             src={tickFinished}
@@ -64,13 +65,9 @@ export default function Item(props) {
         ) : null}
       </figure>
       {toDelete ? (
-        <AlertDelete title={props.task.title} setToDelete={setToDelete} />
+        <AlertDelete title={task.title} setToDelete={setToDelete} />
       ) : (
-        <ItemEditButtons
-          title={props.task.title}
-          finished={props.task.finished}
-          setToDelete={setToDelete}
-        />
+        <ItemEditButtons setToDelete={setToDelete} />
       )}
     </article>
   );
