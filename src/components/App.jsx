@@ -71,10 +71,25 @@ export default class App extends Component {
     result = [];
   };
 
+  editTask = (task, change) => {
+    let result = this.state.tasks.map((item, index, array) => {
+      if (item.title === task) {
+        return (array[index] = change);
+      }
+      return item;
+    });
+    this.setState({ tasks: result });
+    result = [];
+  };
+
   render() {
     return (
       <myContext.Provider
-        value={{ deleteTask: this.deleteTask, checkTask: this.checkTask }}
+        value={{
+          deleteTask: this.deleteTask,
+          checkTask: this.checkTask,
+          editTask: this.editTask,
+        }}
       >
         <Router>
           <Header />
