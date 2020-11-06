@@ -8,7 +8,7 @@ export default function ItemContent(props) {
   return (
     <React.Fragment>
       <h3>{task.title}</h3>
-      <p className="test">{task.deadline.split("-").reverse().join(".")}</p>
+      <p>{task.deadline.split("-").reverse().join(".")}</p>
       <p>
         <strong>Importance:</strong>
       </p>

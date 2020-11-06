@@ -1,4 +1,5 @@
-h3 {
+h3,
+.h3 {
   font-size: 1.3rem;
   text-transform: uppercase;
   font-weight: 500;
