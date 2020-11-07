@@ -86,7 +86,7 @@ export default class App extends Component {
 
   editTask = (task, change) => {
     let result = this.state.tasks.map((item, index, array) => {
-      if (item.title === task) {
+      if (item.id === task) {
         return (array[index] = change);
       }
       return item;

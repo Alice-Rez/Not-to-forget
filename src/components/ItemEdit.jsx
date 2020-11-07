@@ -9,11 +9,12 @@ export default function ItemContent(props) {
     deadline: task.deadline,
     importance: task.importance,
     description: task.description,
+    id: task.id,
   });
 
   const finishEdit = (e) => {
     e.preventDefault();
-    editTask(task.title, change);
+    editTask(task.id, change);
     props.setToEdit(false);
   };
 
