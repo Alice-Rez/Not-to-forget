@@ -59,7 +59,7 @@ export default function Search(props) {
           </button>
         </form>
       </section>
-      <section className="search-results">
+      <section className="my-card-deck">
         {showItem
           ? props.tasks.map((task, index) => {
               if (input === task.title) {
