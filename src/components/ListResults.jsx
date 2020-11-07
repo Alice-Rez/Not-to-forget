@@ -9,6 +9,30 @@ export default class ListResults extends Component {
     titleClicked: false,
   };
 
+  //   static getDerivedStateFromProps(props, state) {
+  //     let result;
+  //     const sortTasksInside = (property) => {
+  //       let helper = props.tasks;
+  //       console.log(props.tasks);
+  //       helper.sort(function (a, b) {
+  //         var keyA = a[property].toLowerCase();
+  //         var keyB = b[property].toLowerCase();
+  //         if (keyA < keyB) return -1;
+  //         if (keyA > keyB) return 1;
+  //         return 0;
+  //       });
+  //       return helper;
+  //     };
+  //     if (state.impClicked) {
+  //       result = sortTasksInside("importance");
+  //       return {
+  //         ...state,
+  //         tasksSorted: result,
+  //       };
+  //     }
+  //     return null;
+  //   }
+
   sortTasks = (property) => {
     let helper = [...this.props.tasks];
     helper.sort(function (a, b) {
