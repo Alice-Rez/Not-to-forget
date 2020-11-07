@@ -1,119 +1,63 @@
 import React, { Component } from "react";
-import { itemContext } from "./context";
-import Item from "./Item";
+import ListResults from "./ListResults";
 
 export default class ListToDo extends Component {
   state = {
-    impClicked: false,
-    deadClicked: false,
-    titleClicked: false,
+    categoryChosen: false,
+    open: false,
+    finished: false,
   };
 
-  sortTasks = (property) => {
-    let helper = [...this.props.tasks];
-    helper.sort(function (a, b) {
-      var keyA = a[property].toLowerCase();
-      var keyB = b[property].toLowerCase();
-      if (keyA < keyB) return -1;
-      if (keyA > keyB) return 1;
-      return 0;
-    });
-    this.setState({ tasksSorted: helper });
-    helper = [];
+  static getDerivedStateFromProps(props, state) {
+    let results;
+    if (state.open) {
+      results = props.tasks.filter((item) => {
+        return !item.finished;
+      });
+      return {
+        ...state,
+        tasks: results,
+        categoryChosen: true,
+      };
+    } else if (state.finished) {
+      results = props.tasks.filter((item) => {
+        return item.finished;
+      });
+      return {
+        ...state,
+        tasks: results,
+        categoryChosen: true,
+      };
+    }
+    return null;
+  }
+
+  getOpenTasks = () => {
+    this.setState({ ...this.state, open: true, finished: false });
   };
 
-  showClicked = (e) => {
-    this.setState({
-      impClicked: false,
-      deadClicked: false,
-      titleClicked: false,
-    });
-    if (e.target.id) {
-      this.setState({ [e.target.id]: true });
-    }
-    if (e.target.id === "impClicked") {
-      this.sortTasks("importance");
-    }
-    if (e.target.id === "deadClicked") {
-      this.sortTasks("deadline");
-    }
-    if (e.target.id === "titleClicked") {
-      this.sortTasks("title");
-    }
+  getFinishedTasks = () => {
+    this.setState({ ...this.state, open: false, finished: true });
   };
+
   render() {
     return (
       <React.Fragment>
-        <section className="buttons-group">
-          <button
-            className={
-              this.state.impClicked
-                ? "btn btn-lg btn-list sort-active"
-                : "btn btn-lg btn-list"
-            }
-            id="impClicked"
-            onClick={this.showClicked}
-          >
-            {this.state.impClicked ? (
-              <span>&#11015;</span>
-            ) : (
-              <span>&#8681;</span>
-            )}{" "}
-            Importance
-          </button>
-          <button
-            className={
-              this.state.deadClicked
-                ? "btn btn-lg btn-list sort-active"
-                : "btn btn-lg btn-list"
-            }
-            id="deadClicked"
-            onClick={this.showClicked}
-          >
-            {this.state.deadClicked ? (
-              <span>&#11015;</span>
-            ) : (
-              <span>&#8681;</span>
-            )}{" "}
-            Deadline
-          </button>
-          <button
-            className={
-              this.state.titleClicked
-                ? "btn btn-lg btn-list sort-active"
-                : "btn btn-lg btn-list"
-            }
-            id="titleClicked"
-            onClick={this.showClicked}
-          >
-            {this.state.titleClicked ? (
-              <span>&#11015;</span>
-            ) : (
-              <span>&#8681;</span>
-            )}{" "}
-            Title
-          </button>
-          <button className="btn btn-lg btn-list" onClick={this.showClicked}>
-            {" "}
-            Reset
-          </button>
-        </section>
-        <section className="my-card-deck">
-          {this.state.impClicked ||
-          this.state.deadClicked ||
-          this.state.titleClicked
-            ? this.state.tasksSorted.map((task, index) => (
-                <itemContext.Provider value={task} key={`task-${index + 1}`}>
-                  <Item />
-                </itemContext.Provider>
-              ))
-            : this.props.tasks.map((task, index) => (
-                <itemContext.Provider value={task} key={`task-${index + 1}`}>
-                  {" "}
-                  <Item />
-                </itemContext.Provider>
-              ))}
-        </section>
+        {this.state.categoryChosen ? (
+          <ListResults tasks={this.state.tasks} />
+        ) : (
+          <section className="buttons-group">
+            <button className="btn btn-lg btn-list" onClick={this.getOpenTasks}>
+              Open Tasks
+            </button>
+            <button
+              className="btn btn-lg btn-list"
+              onClick={this.getFinishedTasks}
+            >
+              Finished tasks
+            </button>
+          </section>
+        )}
       </React.Fragment>
     );
   }
