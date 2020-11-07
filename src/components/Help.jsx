@@ -46,9 +46,10 @@ export default class Help extends Component {
               <strong>Add to-do items</strong>
             </p>
             <p>
-              You have to add title, deadline and importance. Detailed
-              description is optional
+              Mandatory for adding item are title, deadline and level of
+              importance.
             </p>
+            <p>Optionaly you can add also detail - description of the task.</p>
           </article>
           <article className="card-white info-main">
             <figure>
@@ -145,10 +146,12 @@ export default class Help extends Component {
             <p>
               <strong>List to-do items</strong>
             </p>
+            <p>Display just opened/finished tasks</p>
             <p>
-              And sort them by importance level, deadline, alphabetically by
-              title or reset to the default order of adding date
+              Sort items by importance level, deadline, alphabetically by title
+              or reset back to the default order of adding.
             </p>
+            <p>Edit, Delete or check your item as finished.</p>
           </article>
           <article className="card-white">
             <figure>
@@ -185,8 +188,13 @@ export default class Help extends Component {
               with whatever you typed in input.
             </p>
             <p>
-              After clicking on search button, the to-do item will be displayed
-              and available for editing.
+              After clicking on search button, the to-do item(s) will be
+              displayed and available for editing, deleting or checking as
+              finished.
+            </p>
+            <p>
+              Be aware that editing of the item title in the search mode will
+              remove it from the list of results!
             </p>
           </article>
         </section>
