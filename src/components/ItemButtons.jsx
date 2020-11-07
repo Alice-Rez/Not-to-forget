@@ -14,7 +14,7 @@ export default function ItemEditButtons(props) {
   };
 
   const wantCheck = () => {
-    checkTask(task.title);
+    checkTask(task.id);
   };
 
   const wantEdit = () => {

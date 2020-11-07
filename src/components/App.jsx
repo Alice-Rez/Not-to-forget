@@ -71,7 +71,7 @@ export default class App extends Component {
 
   checkTask = (task) => {
     let result = this.state.tasks.map((item) => {
-      if (item.title === task) {
+      if (item.id === task) {
         if (item.finished) {
           return { ...item, finished: !item.finished };
         } else {
