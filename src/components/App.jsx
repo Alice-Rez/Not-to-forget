@@ -16,12 +16,14 @@ export default class App extends Component {
         importance: "1",
         description:
           "Learn React really in deep during my dci course, using FEM videos and Udemy course from Colt Steele",
+        id: 1,
       },
       {
         title: "silvester",
         deadline: "2020-12-31",
         importance: "4",
         description: "Finally end of this horror year!!!!",
+        id: 2,
       },
       {
         title: "Christmas",
@@ -29,12 +31,14 @@ export default class App extends Component {
         importance: "3",
         description:
           "Although there is covid, still celebrate Christmas at least a bit!",
+        id: 3,
       },
       {
         title: "final presentation",
         deadline: "2021-03-23",
         importance: "2",
         description: "Presentation of our final projects. last day in DCI.",
+        id: 4,
       },
       {
         title: "Halloween",
@@ -42,12 +46,21 @@ export default class App extends Component {
         importance: "4",
         description: "Definitely do not celebrate Halloween this year!",
         finished: true,
+        id: 5,
       },
     ],
   };
 
   addTask = (task) => {
-    this.setState({ tasks: [...this.state.tasks, task] });
+    let id;
+    if (this.state.tasks.length < 1) {
+      id = 1;
+    } else {
+      id = this.state.tasks[this.state.tasks.length - 1].id + 1;
+    }
+    this.setState({
+      tasks: [...this.state.tasks, { ...task, id: id }],
+    });
   };
 
   deleteTask = (task) => {
