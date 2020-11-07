@@ -55,7 +55,7 @@ export default function Item() {
       {!toDelete && !toEdit ? (
         <ItemEditButtons setToDelete={setToDelete} setToEdit={setToEdit} />
       ) : toDelete ? (
-        <AlertDelete title={task.title} setToDelete={setToDelete} />
+        <AlertDelete setToDelete={setToDelete} />
       ) : null}
     </article>
   );

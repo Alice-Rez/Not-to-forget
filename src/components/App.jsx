@@ -64,7 +64,7 @@ export default class App extends Component {
   };
 
   deleteTask = (task) => {
-    let result = this.state.tasks.filter((item) => item.title !== task);
+    let result = this.state.tasks.filter((item) => item.id !== task);
     this.setState({ tasks: result });
     result = [];
   };
