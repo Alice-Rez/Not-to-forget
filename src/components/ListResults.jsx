@@ -47,6 +47,25 @@ export default class ListResults extends Component {
         <section className="buttons-group">
           <button
             className={
+              !this.state.titleClicked &&
+              !this.state.deadClicked &&
+              !this.state.impClicked
+                ? "btn btn-lg btn-list sort-active"
+                : "btn btn-lg btn-list"
+            }
+            onClick={this.showClicked}
+          >
+            {!this.state.titleClicked &&
+            !this.state.deadClicked &&
+            !this.state.impClicked ? (
+              <span>&#11015;</span>
+            ) : (
+              <span>&#8681;</span>
+            )}{" "}
+            Added
+          </button>
+          <button
+            className={
               this.state.impClicked
                 ? "btn btn-lg btn-list sort-active"
                 : "btn btn-lg btn-list"
@@ -92,10 +111,6 @@ export default class ListResults extends Component {
               <span>&#8681;</span>
             )}{" "}
             Title
-          </button>
-          <button className="btn btn-lg btn-list" onClick={this.showClicked}>
-            {" "}
-            Reset
           </button>
         </section>
         <section className="my-card-deck">

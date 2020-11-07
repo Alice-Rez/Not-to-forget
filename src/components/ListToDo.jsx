@@ -29,7 +29,11 @@ export default class ListToDo extends Component {
         categoryChosen: true,
       };
     }
-    return null;
+    return {
+      ...state,
+      tasks: props.tasks,
+      categoryChosen: true,
+    };
   }
 
   getOpenTasks = () => {
@@ -40,24 +44,47 @@ export default class ListToDo extends Component {
     this.setState({ ...this.state, open: false, finished: true });
   };
 
+  getAllTasks = () => {
+    this.setState({ ...this.state, open: false, finished: false });
+  };
+
   render() {
     return (
       <React.Fragment>
-        {this.state.categoryChosen ? (
-          <ListResults tasks={this.state.tasks} />
-        ) : (
-          <section className="buttons-group">
-            <button className="btn btn-lg btn-list" onClick={this.getOpenTasks}>
-              Open Tasks
-            </button>
-            <button
-              className="btn btn-lg btn-list"
-              onClick={this.getFinishedTasks}
-            >
-              Finished tasks
-            </button>
-          </section>
-        )}
+        <section className="buttons-group buttons-group-smaller">
+          <button
+            className={
+              !this.state.open && !this.state.finished
+                ? "btn btn-lg btn-list sort-active"
+                : "btn btn-lg btn-list display-inactive"
+            }
+            onClick={this.getAllTasks}
+          >
+            All
+          </button>
+          <button
+            className={
+              this.state.open
+                ? "btn btn-lg btn-list sort-active"
+                : "btn btn-lg btn-list"
+            }
+            onClick={this.getOpenTasks}
+          >
+            Open
+          </button>
+          <button
+            className={
+              this.state.finished
+                ? "btn btn-lg btn-list sort-active"
+                : "btn btn-lg btn-list"
+            }
+            onClick={this.getFinishedTasks}
+          >
+            Finished
+          </button>
+        </section>
+
+        <ListResults tasks={this.state.tasks} />
       </React.Fragment>
     );
   }

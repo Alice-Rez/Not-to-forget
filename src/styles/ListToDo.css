@@ -1,6 +1,6 @@
 .buttons-group {
   width: 90%;
-  max-width: 500px;
+  max-width: 550px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -8,9 +8,13 @@
   padding-bottom: 0;
 }
 
+.buttons-group-smaller {
+  max-width: 300px;
+}
+
 .btn-list {
-  background-color: var(--list);
-  color: var(--white);
+  background-color: var(--background);
+  color: var(--black);
   margin-bottom: 0.5em;
 }
 
@@ -19,5 +23,10 @@ span {
 }
 
 .sort-active {
-  color: var(--black);
+  background-color: var(--list);
+  color: var(--white);
 }
+
+/* .display-inactive {
+  color: var(--list);
+} */
