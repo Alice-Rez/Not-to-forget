@@ -25,6 +25,11 @@ export default function ItemContent(props) {
     });
   };
 
+  const cancelEdit = (e) => {
+    e.preventDefault();
+    props.setToEdit(false);
+  };
+
   return (
     <form onSubmit={finishEdit}>
       <input
@@ -81,7 +86,10 @@ export default function ItemContent(props) {
         />
       </div>
       <button type="submit" className="btn btn-edit">
-        Edit Item
+        Save
+      </button>
+      <button type="reset" className="btn" onClick={cancelEdit}>
+        Cancel
       </button>
     </form>
   );
