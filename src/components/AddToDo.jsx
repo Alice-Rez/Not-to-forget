@@ -44,6 +44,7 @@ export default class AddToDo extends Component {
               type="date"
               name="deadline"
               id="deadline"
+              placeholder="yyyy-mm-dd"
               required
               className="form-control col-sm-10"
               onInput={this.getValue}
