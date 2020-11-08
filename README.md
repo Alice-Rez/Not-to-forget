@@ -6,7 +6,7 @@ Simple React to-do app. Work in progress - adding new features and making code b
 
 For basic showing of the function, five static tasks (four open, one finished) were added as a default (but if you want to test app, you can add any other items you want :) ).
 
-Currently serverless, just front-end with React.
+Currently serverless, just front-end with React where all changes disappear when refresh the page.
 
 **Current functionalities (omega version):**
 
@@ -44,7 +44,7 @@ Currently serverless, just front-end with React.
 
 ## Implementation
 
-**Used technologies**: React, Create React App, React Router, customized sorting function in sort, JSX, CSS, CSS variables, Bootstrap, SVG
+**Used technologies**: React, Create React App, React Router, functional components, class components, React Hooks, react Context, getDerivedStateFromProps life cycle method, customized sorting function in sort, JSX, CSS, CSS variables, Bootstrap, SVG
 
 For the project configuration was used Create React App package.
 
