@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { itemContext } from "./context";
-import tickFinished from "../images/tickV1.svg";
+import tickFinished from "../images/tickV1.png";
 
 export default function ItemContent(props) {
   const task = useContext(itemContext);

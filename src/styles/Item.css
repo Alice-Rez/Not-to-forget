@@ -14,7 +14,8 @@ figure {
 }
 
 .img-larger {
-  width: 50%;
+  width: 30%;
+  /* width: 50%; */
 }
 
 .btn-edit {
