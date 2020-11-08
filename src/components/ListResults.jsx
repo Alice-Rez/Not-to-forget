@@ -51,25 +51,57 @@ export default class ListResults extends Component {
     helper = [];
   };
 
-  showClicked = (e) => {
+  sortImportance = () => {
+    this.setState({
+      impClicked: true,
+      deadClicked: false,
+      titleClicked: false,
+    });
+  };
+
+  sortDeadline = () => {
+    this.setState({
+      impClicked: false,
+      deadClicked: true,
+      titleClicked: false,
+    });
+  };
+
+  sortTitle = () => {
+    this.setState({
+      impClicked: false,
+      deadClicked: false,
+      titleClicked: true,
+    });
+  };
+
+  sortReset = () => {
     this.setState({
       impClicked: false,
       deadClicked: false,
       titleClicked: false,
     });
-    if (e.target.id) {
-      this.setState({ [e.target.id]: true });
-    }
-    if (e.target.id === "impClicked") {
-      this.sortTasks("importance");
-    }
-    if (e.target.id === "deadClicked") {
-      this.sortTasks("deadline");
-    }
-    if (e.target.id === "titleClicked") {
-      this.sortTasks("title");
-    }
   };
+
+  //   showClicked = (e) => {
+  //     this.setState({
+  //       impClicked: false,
+  //       deadClicked: false,
+  //       titleClicked: false,
+  //     });
+  //     if (e.target.id) {
+  //       this.setState({ [e.target.id]: true });
+  //     }
+  //     if (e.target.id === "impClicked") {
+  //       this.sortTasks("importance");
+  //     }
+  //     if (e.target.id === "deadClicked") {
+  //       this.sortTasks("deadline");
+  //     }
+  //     if (e.target.id === "titleClicked") {
+  //       this.sortTasks("title");
+  //     }
+  //   };
   render() {
     return (
       <React.Fragment>
@@ -82,14 +114,14 @@ export default class ListResults extends Component {
                 ? "btn btn-lg btn-list sort-active"
                 : "btn btn-lg btn-list"
             }
-            onClick={this.showClicked}
+            onClick={this.sortReset}
           >
             {!this.state.titleClicked &&
             !this.state.deadClicked &&
             !this.state.impClicked ? (
-              <span>&#11015;</span>
+              <span>&#11014;</span>
             ) : (
-              <span>&#8681;</span>
+              <span>&#8679;</span>
             )}{" "}
             Added
           </button>
@@ -100,7 +132,7 @@ export default class ListResults extends Component {
                 : "btn btn-lg btn-list"
             }
             id="impClicked"
-            onClick={this.showClicked}
+            onClick={this.sortImportance}
           >
             {this.state.impClicked ? (
               <span>&#11015;</span>
@@ -116,7 +148,7 @@ export default class ListResults extends Component {
                 : "btn btn-lg btn-list"
             }
             id="deadClicked"
-            onClick={this.showClicked}
+            onClick={this.sortDeadline}
           >
             {this.state.deadClicked ? (
               <span>&#11015;</span>
@@ -132,7 +164,7 @@ export default class ListResults extends Component {
                 : "btn btn-lg btn-list"
             }
             id="titleClicked"
-            onClick={this.showClicked}
+            onClick={this.sortTitle}
           >
             {this.state.titleClicked ? (
               <span>&#11015;</span>
