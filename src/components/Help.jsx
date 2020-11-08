@@ -146,12 +146,12 @@ export default class Help extends Component {
             <p>
               <strong>List to-do items</strong>
             </p>
-            <p>Display just opened/finished tasks</p>
+            <p>Display all or just opened/finished tasks</p>
             <p>
               Sort items by importance level, deadline, alphabetically by title
               or reset back to the default order of adding.
             </p>
-            <p>Edit, Delete or check your item as finished.</p>
+            <p>Edit, delete or check your item as finished.</p>
           </article>
           <article className="card-white">
             <figure>
