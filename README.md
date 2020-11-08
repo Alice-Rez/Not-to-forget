@@ -4,7 +4,7 @@
 
 Simple React to-do app. Work in progress - adding new features and making code better as I learn more about React.
 
-For basic showing of the function, four static tasks were added as a default (but if you w ant to test app, you can add any other items you want :) ).
+For basic showing of the function, five static tasks (four open, one finished) were added as a default (but if you want to test app, you can add any other items you want :) ).
 
 Currently serverless, just front-end with React.
 
@@ -22,7 +22,13 @@ Currently serverless, just front-end with React.
 
 - searching for the to-do with specific name
 
-- basic autocomplete function showing all names of existing items that corresponds to the typed search keyword
+- basic autocomplete function showing all names of existing items that corresponds to the typed search keyword (working just using mouse now)
+
+- possibility to check/uncheck task (to mark it as finished one), edit task (you can save changes or cancel the editing and go back to original state) or delete it (with display of alert if you want to delete it)
+
+- check/delete/edit is available in list of item but also when searched item is displayed in search 8just when change title in search mode, task will be no longer displayed for that search)
+
+- in list of all to-do, user can display all tasks or just open/finished once
 
 ## Setup
 
