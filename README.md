@@ -30,6 +30,8 @@ Currently serverless, just front-end with React where all changes disappear when
 
 - in list of all to-do, user can display all tasks or just open/finished once
 
+More images at the end of the readme in [Gallery](##gallery).
+
 ## Setup
 
 1. Clone repository
@@ -49,3 +51,21 @@ Currently serverless, just front-end with React where all changes disappear when
 For the project configuration was used Create React App package.
 
 Bootstrap was used for basic styling but heavily customized.
+
+## Gallery
+
+**Fig.1** : Not default sorting chosen, one of tasks is checked (finished)
+
+<img align="center" src="./README-materials/image2.png" width="80%">
+
+</br>
+</br>
+</br>
+
+**Fig.2** : Editing and deleting dialogues
+
+<img align="center" src="./README-materials/image3.png" width="80%">
+
+</br>
+</br>
+</br>
