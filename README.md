@@ -30,7 +30,7 @@ Currently serverless, just front-end with React where all changes disappear when
 
 - in list of all to-do, user can display all tasks or just open/finished once
 
-More images at the end of the readme in [Gallery](##gallery).
+More images at the end of the readme in [Gallery](#gallery).
 
 ## Setup
 
