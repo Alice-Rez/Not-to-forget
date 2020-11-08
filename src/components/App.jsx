@@ -52,14 +52,14 @@ export default class App extends Component {
   };
 
   addTask = (task) => {
-    let id;
-    if (this.state.tasks.length < 1) {
-      id = 1;
-    } else {
-      id = this.state.tasks[this.state.tasks.length - 1].id + 1;
+    let id = 0;
+    for (let item of this.state.tasks) {
+      if (item.id >= id) {
+        id = item.id;
+      }
     }
     this.setState({
-      tasks: [...this.state.tasks, { ...task, id: id }],
+      tasks: [...this.state.tasks, { ...task, id: id + 1 }],
     });
   };
 
