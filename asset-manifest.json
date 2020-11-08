@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/Not-to-forget/static/css/main.101cf912.chunk.css",
-    "main.js": "/Not-to-forget/static/js/main.f8c63667.chunk.js",
-    "main.js.map": "/Not-to-forget/static/js/main.f8c63667.chunk.js.map",
+    "main.css": "/Not-to-forget/static/css/main.4e985957.chunk.css",
+    "main.js": "/Not-to-forget/static/js/main.5c9a8087.chunk.js",
+    "main.js.map": "/Not-to-forget/static/js/main.5c9a8087.chunk.js.map",
     "runtime-main.js": "/Not-to-forget/static/js/runtime-main.b66b1594.js",
     "runtime-main.js.map": "/Not-to-forget/static/js/runtime-main.b66b1594.js.map",
     "static/css/2.6414bb7b.chunk.css": "/Not-to-forget/static/css/2.6414bb7b.chunk.css",
     "static/js/2.0b2ca71b.chunk.js": "/Not-to-forget/static/js/2.0b2ca71b.chunk.js",
     "static/js/2.0b2ca71b.chunk.js.map": "/Not-to-forget/static/js/2.0b2ca71b.chunk.js.map",
     "index.html": "/Not-to-forget/index.html",
-    "precache-manifest.43d0fd6f8977498d274ed213b8b96da4.js": "/Not-to-forget/precache-manifest.43d0fd6f8977498d274ed213b8b96da4.js",
+    "precache-manifest.d5c47299bbd03ce3d8628dc1d1125831.js": "/Not-to-forget/precache-manifest.d5c47299bbd03ce3d8628dc1d1125831.js",
     "service-worker.js": "/Not-to-forget/service-worker.js",
     "static/css/2.6414bb7b.chunk.css.map": "/Not-to-forget/static/css/2.6414bb7b.chunk.css.map",
-    "static/css/main.101cf912.chunk.css.map": "/Not-to-forget/static/css/main.101cf912.chunk.css.map",
+    "static/css/main.4e985957.chunk.css.map": "/Not-to-forget/static/css/main.4e985957.chunk.css.map",
     "static/js/2.0b2ca71b.chunk.js.LICENSE.txt": "/Not-to-forget/static/js/2.0b2ca71b.chunk.js.LICENSE.txt",
     "static/media/cross.svg": "/Not-to-forget/static/media/cross.871eaf58.svg",
     "static/media/edit.svg": "/Not-to-forget/static/media/edit.1bf98d96.svg",
@@ -20,14 +20,14 @@
     "static/media/pin-lila.png": "/Not-to-forget/static/media/pin-lila.f597a4c4.png",
     "static/media/pin-red.png": "/Not-to-forget/static/media/pin-red.dc816caf.png",
     "static/media/pin-yellow.png": "/Not-to-forget/static/media/pin-yellow.b3a67be0.png",
-    "static/media/tickV1.svg": "/Not-to-forget/static/media/tickV1.726024b5.svg",
+    "static/media/tickV1.png": "/Not-to-forget/static/media/tickV1.de1ed16f.png",
     "static/media/tickV2.svg": "/Not-to-forget/static/media/tickV2.0e70b852.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.b66b1594.js",
     "static/css/2.6414bb7b.chunk.css",
     "static/js/2.0b2ca71b.chunk.js",
-    "static/css/main.101cf912.chunk.css",
-    "static/js/main.f8c63667.chunk.js"
+    "static/css/main.4e985957.chunk.css",
+    "static/js/main.5c9a8087.chunk.js"
   ]
 }

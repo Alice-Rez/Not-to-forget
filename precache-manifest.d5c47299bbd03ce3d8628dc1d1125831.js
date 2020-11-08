@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "184215706283baa4434040f32fdee91d",
+    "revision": "166a46a47e4f36616fbf3c7786e61a62",
     "url": "/Not-to-forget/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Not-to-forget/static/css/2.6414bb7b.chunk.css"
   },
   {
-    "revision": "cb5b5a43733b0b9c6d09",
-    "url": "/Not-to-forget/static/css/main.101cf912.chunk.css"
+    "revision": "dd43030d59436a05320c",
+    "url": "/Not-to-forget/static/css/main.4e985957.chunk.css"
   },
   {
     "revision": "84b7db4ca4936dfd45cd",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Not-to-forget/static/js/2.0b2ca71b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "cb5b5a43733b0b9c6d09",
-    "url": "/Not-to-forget/static/js/main.f8c63667.chunk.js"
+    "revision": "dd43030d59436a05320c",
+    "url": "/Not-to-forget/static/js/main.5c9a8087.chunk.js"
   },
   {
     "revision": "26bff3f338ccb3c0330e",
@@ -52,8 +52,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Not-to-forget/static/media/pin-yellow.b3a67be0.png"
   },
   {
-    "revision": "726024b5925f975324df215da3c2560a",
-    "url": "/Not-to-forget/static/media/tickV1.726024b5.svg"
+    "revision": "de1ed16fdfc862df80df7120f7bf0f33",
+    "url": "/Not-to-forget/static/media/tickV1.de1ed16f.png"
   },
   {
     "revision": "0e70b852dcaadb061f8835942f6198e4",
