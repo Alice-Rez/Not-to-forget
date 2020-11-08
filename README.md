@@ -56,7 +56,7 @@ Bootstrap was used for basic styling but heavily customized.
 
 **Fig.1** : Not default sorting chosen, one of tasks is checked (finished)
 
-<img align="center" src="./README-materials/image2.png" width="80%">
+<img align="center" src="./README-materials/image2.png" width="100%">
 
 </br>
 </br>
@@ -64,7 +64,7 @@ Bootstrap was used for basic styling but heavily customized.
 
 **Fig.2** : Editing and deleting dialogues
 
-<img align="center" src="./README-materials/image3.png" width="80%">
+<img align="center" src="./README-materials/image3.png" width="100%">
 
 </br>
 </br>
