@@ -3,7 +3,6 @@ import ListResults from "./ListResults";
 
 export default class ListToDo extends Component {
   state = {
-    categoryChosen: false,
     open: false,
     finished: false,
   };
@@ -17,7 +16,6 @@ export default class ListToDo extends Component {
       return {
         ...state,
         tasks: results,
-        categoryChosen: true,
       };
     } else if (state.finished) {
       results = props.tasks.filter((item) => {
@@ -26,13 +24,11 @@ export default class ListToDo extends Component {
       return {
         ...state,
         tasks: results,
-        categoryChosen: true,
       };
     }
     return {
       ...state,
       tasks: props.tasks,
-      categoryChosen: true,
     };
   }
 

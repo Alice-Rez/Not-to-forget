@@ -12,8 +12,7 @@ export default class ListResults extends Component {
   static getDerivedStateFromProps(props, state) {
     let result;
     const sortTasksInside = (property) => {
-      let helper = props.tasks;
-      console.log(props.tasks);
+      let helper = [...props.tasks];
       helper.sort(function (a, b) {
         var keyA = a[property];
         var keyB = b[property];
