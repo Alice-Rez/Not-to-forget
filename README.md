@@ -69,3 +69,7 @@ Bootstrap was used for basic styling but heavily customized.
 </br>
 </br>
 </br>
+
+## Acknowledgement
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
