@@ -1,6 +1,10 @@
 <h1><img align="center" src="./README-materials/title.png" width="100%"> </h1>
 
-[Live demo](https://alice-rez.github.io/Not-to-forget/)
+"Never more forget your important dates!"
+
+Explore [Live demo](https://alice-rez.github.io/Not-to-forget/) or look at previews in [Gallery](#gallery)
+
+## Description
 
 Simple React to-do app. Work in progress - adding new features and making code better as I learn more about React.
 
@@ -30,8 +34,6 @@ Currently serverless, just front-end with React where all changes disappear when
 
 - in list of all to-do, user can display all tasks or just open/finished once
 
-More images at the end of the readme in [Gallery](#gallery).
-
 ## Setup
 
 1. Clone repository
@@ -52,6 +54,10 @@ For the project configuration was used Create React App package.
 
 Bootstrap was used for basic styling but heavily customized.
 
+## Acknowledgement
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 ## Gallery
 
 **Fig.1** : Not default sorting chosen, one of tasks is checked (finished)
@@ -69,7 +75,3 @@ Bootstrap was used for basic styling but heavily customized.
 </br>
 </br>
 </br>
-
-## Acknowledgement
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
