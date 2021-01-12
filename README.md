@@ -4,14 +4,6 @@
 
 Explore [Live demo](https://alice-rez.github.io/Not-to-forget/) or look at previews in [Gallery](#gallery)
 
-## Important!
-
-**Currently refactoring for fullstack version. If you want to see code of the current live demo, please switch to branch:**
-
-```
-frontend-demo
-```
-
 ## Description
 
 Simple React to-do app. Work in progress - adding new features and making code better as I learn more about React.
