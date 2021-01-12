@@ -50,12 +50,13 @@ export default class App extends Component {
       //   id: 5,
       // },
     ],
+    user: "demo",
   };
 
   componentDidMount() {
     Axios({
       method: "GET",
-      url: "/tasks/all",
+      url: `/tasks/${this.state.user}/all`,
     })
       .then((res) => {
         console.log(res);
@@ -71,9 +72,28 @@ export default class App extends Component {
         id = item.index;
       }
     }
-    this.setState({
-      tasks: [...this.state.tasks, { ...task, index: id + 1 }],
-    });
+    let data = { ...task, index: id + 1, user: this.state.user };
+    Axios({
+      method: "POST",
+      url: "/tasks/add",
+      data: data,
+    })
+      .then((res) => {
+        console.log(res);
+        console.log("task was added");
+        if (res.data) {
+          Axios({
+            method: "GET",
+            url: `/tasks/${this.state.user}/all`,
+          })
+            .then((res) => {
+              console.log(res);
+              this.setState({ tasks: res.data });
+            })
+            .catch((err) => console.log(err));
+        }
+      })
+      .catch((err) => console.log(err));
   };
 
   deleteTask = (task) => {
