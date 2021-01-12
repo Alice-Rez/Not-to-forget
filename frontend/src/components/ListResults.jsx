@@ -29,7 +29,7 @@ export default class ListResults extends Component {
     } else if (state.titleClicked) {
       result = sortTasksInside("title");
     } else {
-      result = sortTasksInside("id");
+      result = sortTasksInside("index");
     }
     return {
       ...state,
