@@ -7,7 +7,7 @@ export default function AlertDelete(props) {
   const task = useContext(itemContext);
 
   const deleteItem = (e) => {
-    deleteTask(task.index);
+    deleteTask(task._id);
     props.setToDelete(false);
   };
 

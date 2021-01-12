@@ -96,15 +96,15 @@ export default class App extends Component {
       .catch((err) => console.log(err));
   };
 
-  deleteTask = (task) => {
-    let result = this.state.tasks.filter((item) => item.index !== task);
+  deleteTask = (taskId) => {
+    let result = this.state.tasks.filter((item) => item._id !== taskId);
     this.setState({ tasks: result });
     result = [];
   };
 
-  checkTask = (task) => {
+  checkTask = (taskId) => {
     let result = this.state.tasks.map((item) => {
-      if (item.index === task) {
+      if (item._id === taskId) {
         if (item.finished) {
           return { ...item, finished: !item.finished };
         } else {
@@ -117,9 +117,9 @@ export default class App extends Component {
     result = [];
   };
 
-  editTask = (task, change) => {
+  editTask = (taskId, change) => {
     let result = this.state.tasks.map((item, index, array) => {
-      if (item.index === task) {
+      if (item._id === taskId) {
         return (array[index] = change);
       }
       return item;
