@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Axios from "axios";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { myContext } from "./context.jsx";
 import Header from "./Header";
@@ -50,6 +51,17 @@ export default class App extends Component {
       },
     ],
   };
+
+  componentDidMount() {
+    Axios({
+      method: "GET",
+      url: "/tasks/all",
+    })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
+  }
 
   addTask = (task) => {
     let id = 0;
