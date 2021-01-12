@@ -5,6 +5,8 @@ import tickFinished from "../images/tickV1.png";
 export default function ItemContent(props) {
   const task = useContext(itemContext);
 
+  console.log(task.description);
+
   return (
     <React.Fragment>
       <h3>{task.title}</h3>

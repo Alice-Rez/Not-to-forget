@@ -14,7 +14,7 @@ export default function ItemContent(props) {
 
   const finishEdit = (e) => {
     e.preventDefault();
-    editTask(task.id, change);
+    editTask(task.index, change);
     props.setToEdit(false);
   };
 

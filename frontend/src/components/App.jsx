@@ -11,44 +11,44 @@ import Help from "./Help";
 export default class App extends Component {
   state = {
     tasks: [
-      {
-        title: "learn React",
-        deadline: "2021-01-21",
-        importance: "1",
-        description:
-          "Learn React really in deep during my dci course, using FEM videos and Udemy course from Colt Steele",
-        id: 1,
-      },
-      {
-        title: "silvester",
-        deadline: "2020-12-31",
-        importance: "4",
-        description: "Finally end of this horror year!!!!",
-        id: 2,
-      },
-      {
-        title: "Christmas",
-        deadline: "2020-12-24",
-        importance: "3",
-        description:
-          "Although there is covid, still celebrate Christmas at least a bit!",
-        id: 3,
-      },
-      {
-        title: "final presentation",
-        deadline: "2021-03-23",
-        importance: "2",
-        description: "Presentation of our final projects. last day in DCI.",
-        id: 4,
-      },
-      {
-        title: "Halloween",
-        deadline: "2020-10-31",
-        importance: "4",
-        description: "Definitely do not celebrate Halloween this year!",
-        finished: true,
-        id: 5,
-      },
+      // {
+      //   title: "learn React",
+      //   deadline: "2021-01-21",
+      //   importance: "1",
+      //   description:
+      //     "Learn React really in deep during my dci course, using FEM videos and Udemy course from Colt Steele",
+      //   id: 1,
+      // },
+      // {
+      //   title: "silvester",
+      //   deadline: "2020-12-31",
+      //   importance: "4",
+      //   description: "Finally end of this horror year!!!!",
+      //   id: 2,
+      // },
+      // {
+      //   title: "Christmas",
+      //   deadline: "2020-12-24",
+      //   importance: "3",
+      //   description:
+      //     "Although there is covid, still celebrate Christmas at least a bit!",
+      //   id: 3,
+      // },
+      // {
+      //   title: "final presentation",
+      //   deadline: "2021-03-23",
+      //   importance: "2",
+      //   description: "Presentation of our final projects. last day in DCI.",
+      //   id: 4,
+      // },
+      // {
+      //   title: "Halloween",
+      //   deadline: "2020-10-31",
+      //   importance: "4",
+      //   description: "Definitely do not celebrate Halloween this year!",
+      //   finished: true,
+      //   id: 5,
+      // },
     ],
   };
 
@@ -59,6 +59,7 @@ export default class App extends Component {
     })
       .then((res) => {
         console.log(res);
+        this.setState({ tasks: res.data });
       })
       .catch((err) => console.log(err));
   }
@@ -66,24 +67,24 @@ export default class App extends Component {
   addTask = (task) => {
     let id = 0;
     for (let item of this.state.tasks) {
-      if (item.id >= id) {
-        id = item.id;
+      if (item.index >= id) {
+        id = item.index;
       }
     }
     this.setState({
-      tasks: [...this.state.tasks, { ...task, id: id + 1 }],
+      tasks: [...this.state.tasks, { ...task, index: id + 1 }],
     });
   };
 
   deleteTask = (task) => {
-    let result = this.state.tasks.filter((item) => item.id !== task);
+    let result = this.state.tasks.filter((item) => item.index !== task);
     this.setState({ tasks: result });
     result = [];
   };
 
   checkTask = (task) => {
     let result = this.state.tasks.map((item) => {
-      if (item.id === task) {
+      if (item.index === task) {
         if (item.finished) {
           return { ...item, finished: !item.finished };
         } else {
@@ -98,7 +99,7 @@ export default class App extends Component {
 
   editTask = (task, change) => {
     let result = this.state.tasks.map((item, index, array) => {
-      if (item.id === task) {
+      if (item.index === task) {
         return (array[index] = change);
       }
       return item;
