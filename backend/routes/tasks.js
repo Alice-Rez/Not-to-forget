@@ -21,4 +21,17 @@ router.post("/add", function (req, res, next) {
     .catch((err) => res.send(err));
 });
 
+router.put("/check", (req, res, next) => {
+  let { uuid } = req.body;
+  TaskModel.findById(uuid)
+    .then((task) => {
+      task.finished = !task.finished;
+      task
+        .save()
+        .then((result) => res.send(result))
+        .catch((err) => res.send(err));
+    })
+    .catch((err) => res.send(err));
+});
+
 module.exports = router;

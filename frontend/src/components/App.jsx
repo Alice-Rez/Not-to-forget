@@ -54,6 +54,10 @@ export default class App extends Component {
   };
 
   componentDidMount() {
+    this.loadTasks();
+  }
+
+  loadTasks = () => {
     Axios({
       method: "GET",
       url: `/tasks/${this.state.user}/all`,
@@ -63,7 +67,7 @@ export default class App extends Component {
         this.setState({ tasks: res.data });
       })
       .catch((err) => console.log(err));
-  }
+  };
 
   addTask = (task) => {
     let id = 0;
@@ -82,15 +86,7 @@ export default class App extends Component {
         console.log(res);
         console.log("task was added");
         if (res.data) {
-          Axios({
-            method: "GET",
-            url: `/tasks/${this.state.user}/all`,
-          })
-            .then((res) => {
-              console.log(res);
-              this.setState({ tasks: res.data });
-            })
-            .catch((err) => console.log(err));
+          this.loadTasks();
         }
       })
       .catch((err) => console.log(err));
@@ -103,18 +99,32 @@ export default class App extends Component {
   };
 
   checkTask = (taskId) => {
-    let result = this.state.tasks.map((item) => {
-      if (item._id === taskId) {
-        if (item.finished) {
-          return { ...item, finished: !item.finished };
-        } else {
-          return { ...item, finished: true };
+    let data = { uuid: taskId };
+    Axios({
+      method: "PUT",
+      url: "/tasks/check",
+      data: data,
+    })
+      .then((res) => {
+        console.log(res);
+        console.log("task was (un)checked");
+        if (res.data) {
+          this.loadTasks();
         }
-      }
-      return item;
-    });
-    this.setState({ tasks: result });
-    result = [];
+      })
+      .catch((err) => console.log(err));
+    // let result = this.state.tasks.map((item) => {
+    //   if (item._id === taskId) {
+    //     if (item.finished) {
+    //       return { ...item, finished: !item.finished };
+    //     } else {
+    //       return { ...item, finished: true };
+    //     }
+    //   }
+    //   return item;
+    // });
+    // this.setState({ tasks: result });
+    // result = [];
   };
 
   editTask = (taskId, change) => {

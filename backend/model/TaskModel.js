@@ -6,7 +6,7 @@ let TaskSchema = new mongoose.Schema({
   deadline: { type: String, required: true },
   importance: { type: String, required: true, enum: ["1", "2", "3", "4"] },
   description: String,
-  finished: Boolean,
+  finished: { type: Boolean, default: false },
   user: { type: String, required: true },
 });
 
