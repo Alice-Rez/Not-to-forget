@@ -34,4 +34,11 @@ router.put("/check", (req, res, next) => {
     .catch((err) => res.send(err));
 });
 
+router.delete("/delete", (req, res, next) => {
+  let { uuid } = req.body;
+  TaskModel.findByIdAndDelete(uuid)
+    .then((result) => res.send(result))
+    .catch((err) => res.send(err));
+});
+
 module.exports = router;

@@ -93,9 +93,23 @@ export default class App extends Component {
   };
 
   deleteTask = (taskId) => {
-    let result = this.state.tasks.filter((item) => item._id !== taskId);
-    this.setState({ tasks: result });
-    result = [];
+    let data = { uuid: taskId };
+    Axios({
+      method: "DELETE",
+      url: "/tasks/delete",
+      data: data,
+    })
+      .then((res) => {
+        console.log(res);
+        console.log("task was deleted");
+        if (res.data) {
+          this.loadTasks();
+        }
+      })
+      .catch((err) => console.log(err));
+    // let result = this.state.tasks.filter((item) => item._id !== taskId);
+    // this.setState({ tasks: result });
+    // result = [];
   };
 
   checkTask = (taskId) => {
