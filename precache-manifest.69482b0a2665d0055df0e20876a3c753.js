@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "cb1ebddde321d6432a8a56a04806d969",
+    "revision": "d3bc3274bdc9d2505a70bdcb8a72b5c2",
     "url": "/Not-to-forget/index.html"
   },
   {
-    "revision": "84b7db4ca4936dfd45cd",
+    "revision": "3c54e3108e9913a5339a",
     "url": "/Not-to-forget/static/css/2.6414bb7b.chunk.css"
   },
   {
-    "revision": "1cbed297b22271b98d66",
+    "revision": "d2995753ec1004ec7ab7",
     "url": "/Not-to-forget/static/css/main.4e985957.chunk.css"
   },
   {
-    "revision": "84b7db4ca4936dfd45cd",
-    "url": "/Not-to-forget/static/js/2.0b2ca71b.chunk.js"
+    "revision": "3c54e3108e9913a5339a",
+    "url": "/Not-to-forget/static/js/2.6375011a.chunk.js"
   },
   {
     "revision": "9b318b6fb13190fe82c0677e9264b3c7",
-    "url": "/Not-to-forget/static/js/2.0b2ca71b.chunk.js.LICENSE.txt"
+    "url": "/Not-to-forget/static/js/2.6375011a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "1cbed297b22271b98d66",
-    "url": "/Not-to-forget/static/js/main.b23d7aa7.chunk.js"
+    "revision": "d2995753ec1004ec7ab7",
+    "url": "/Not-to-forget/static/js/main.892e7bae.chunk.js"
   },
   {
     "revision": "26bff3f338ccb3c0330e",
