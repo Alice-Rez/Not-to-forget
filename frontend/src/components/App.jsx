@@ -1,11 +1,16 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import { myContext } from "./context.jsx";
 import Header from "./Header";
 import AddToDo from "./AddToDo";
 import ListToDo from "./ListToDo";
 import Search from "./Search";
-import Help from "./Home";
+import Home from "./Home";
 
 export default class App extends Component {
   state = {
@@ -124,7 +129,7 @@ export default class App extends Component {
                 <Home />
               </Route>
               <Route path="*">
-                <Home />
+                <Redirect to="/" />
               </Route>
             </Switch>
           </main>
