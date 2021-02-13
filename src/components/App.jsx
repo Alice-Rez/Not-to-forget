@@ -5,7 +5,7 @@ import Header from "./Header";
 import AddToDo from "./AddToDo";
 import ListToDo from "./ListToDo";
 import Search from "./Search";
-import Help from "./Help";
+import Help from "./Home";
 
 export default class App extends Component {
   state = {
@@ -120,8 +120,11 @@ export default class App extends Component {
               <Route path="/search">
                 <Search tasks={this.state.tasks} />
               </Route>
-              <Route path="/help">
-                <Help />
+              <Route path="/" exact>
+                <Home />
+              </Route>
+              <Route path="*">
+                <Home />
               </Route>
             </Switch>
           </main>

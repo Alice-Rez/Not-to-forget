@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export default class Help extends Component {
+export default class Home extends Component {
   render() {
     return (
       <React.Fragment>
