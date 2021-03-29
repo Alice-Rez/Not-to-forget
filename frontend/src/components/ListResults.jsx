@@ -81,26 +81,6 @@ export default class ListResults extends Component {
       titleClicked: false,
     });
   };
-
-  //   showClicked = (e) => {
-  //     this.setState({
-  //       impClicked: false,
-  //       deadClicked: false,
-  //       titleClicked: false,
-  //     });
-  //     if (e.target.id) {
-  //       this.setState({ [e.target.id]: true });
-  //     }
-  //     if (e.target.id === "impClicked") {
-  //       this.sortTasks("importance");
-  //     }
-  //     if (e.target.id === "deadClicked") {
-  //       this.sortTasks("deadline");
-  //     }
-  //     if (e.target.id === "titleClicked") {
-  //       this.sortTasks("title");
-  //     }
-  //   };
   render() {
     return (
       <React.Fragment>

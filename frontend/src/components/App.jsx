@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,129 +12,128 @@ import ListToDo from "./ListToDo";
 import Search from "./Search";
 import Home from "./Home";
 
-export default class App extends Component {
-  state = {
-    tasks: [
-      {
-        title: "learn React",
-        deadline: "2021-01-21",
-        importance: "1",
-        description:
-          "Learn React really in deep during my dci course, using FEM videos and Udemy course from Colt Steele",
-        id: 1,
-      },
-      {
-        title: "silvester",
-        deadline: "2020-12-31",
-        importance: "4",
-        description: "Finally end of this horror year!!!!",
-        id: 2,
-      },
-      {
-        title: "Christmas",
-        deadline: "2020-12-24",
-        importance: "3",
-        description:
-          "Although there is covid, still celebrate Christmas at least a bit!",
-        id: 3,
-      },
-      {
-        title: "final presentation",
-        deadline: "2021-03-23",
-        importance: "2",
-        description: "Presentation of our final projects. last day in DCI.",
-        id: 4,
-      },
-      {
-        title: "Halloween",
-        deadline: "2020-10-31",
-        importance: "4",
-        description: "Definitely do not celebrate Halloween this year!",
-        finished: true,
-        id: 5,
-      },
-    ],
-  };
+export default function App() {
+  const [tasks, setTasks] = useState([
+    {
+      title: "learn React",
+      deadline: "2021-01-21",
+      importance: "1",
+      description:
+        "Learn React really in deep during my dci course, using FEM videos and Udemy course from Colt Steele",
+      id: 1,
+    },
+    {
+      title: "silvester",
+      deadline: "2020-12-31",
+      importance: "4",
+      description: "Finally end of this horror year!!!!",
+      id: 2,
+    },
+    {
+      title: "Christmas",
+      deadline: "2020-12-24",
+      importance: "3",
+      description:
+        "Although there is covid, still celebrate Christmas at least a bit!",
+      id: 3,
+    },
+    {
+      title: "final presentation",
+      deadline: "2021-03-23",
+      importance: "2",
+      description: "Presentation of our final projects. last day in DCI.",
+      id: 4,
+    },
+    {
+      title: "Halloween",
+      deadline: "2020-10-31",
+      importance: "4",
+      description: "Definitely do not celebrate Halloween this year!",
+      finished: true,
+      id: 5,
+    },
+  ]);
 
-  addTask = (task) => {
+  useEffect(() => {
+    if (localStorage.getItem("tasks")) {
+      setTasks(JSON.parse(localStorage.getItem("tasks")));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+
+  const addTask = (task) => {
     let id = 0;
-    for (let item of this.state.tasks) {
+    for (let item of tasks) {
       if (item.id >= id) {
         id = item.id;
       }
     }
-    this.setState({
-      tasks: [...this.state.tasks, { ...task, id: id + 1 }],
-    });
+    setTasks([...tasks, { ...task, id: id + 1 }]);
   };
 
-  deleteTask = (task) => {
-    let result = this.state.tasks.filter((item) => item.id !== task);
-    this.setState({ tasks: result });
-    result = [];
+  const deleteTask = (id) => {
+    setTasks((prevTasks) => prevTasks.filter((item) => item.id !== id));
   };
 
-  checkTask = (task) => {
-    let result = this.state.tasks.map((item) => {
-      if (item.id === task) {
-        if (item.finished) {
-          return { ...item, finished: !item.finished };
-        } else {
-          return { ...item, finished: true };
+  const checkTask = (id) => {
+    setTasks((prevTasks) =>
+      prevTasks.map((item) => {
+        if (item.id === id) {
+          if (item.finished) {
+            return { ...item, finished: !item.finished };
+          } else {
+            return { ...item, finished: true };
+          }
         }
-      }
-      return item;
-    });
-    this.setState({ tasks: result });
-    result = [];
-  };
-
-  editTask = (task, change) => {
-    let result = this.state.tasks.map((item, index, array) => {
-      if (item.id === task) {
-        return (array[index] = change);
-      }
-      return item;
-    });
-    this.setState({ tasks: result });
-    result = [];
-  };
-
-  render() {
-    return (
-      <myContext.Provider
-        value={{
-          deleteTask: this.deleteTask,
-          checkTask: this.checkTask,
-          editTask: this.editTask,
-        }}
-      >
-        <Router>
-          <Header />
-          <main className="p-3">
-            <Switch>
-              <Route path="/add">
-                <AddToDo
-                  addTask={this.addTask}
-                  changeStyle={this.changeStyle}
-                />
-              </Route>
-              <Route path="/list">
-                <ListToDo tasks={this.state.tasks} />
-              </Route>
-              <Route path="/search">
-                <Search tasks={this.state.tasks} />
-              </Route>
-              <Route path="/" exact>
-                <Home />
-              </Route>
-              <Route path="*">
-                <Redirect to="/" />
-              </Route>
-            </Switch>
-          </main>
-        </Router>
-      </myContext.Provider>
+        return item;
+      })
     );
-  }
+  };
+
+  const editTask = (id, change) => {
+    setTasks((prevTasks) =>
+      prevTasks.map((item, index, array) => {
+        if (item.id === id) {
+          return (array[index] = change);
+        }
+        return item;
+      })
+    );
+  };
+
+  return (
+    <myContext.Provider
+      value={{
+        deleteTask,
+        checkTask,
+        editTask,
+      }}
+    >
+      <Router>
+        <Header />
+        <main className="p-3">
+          <Switch>
+            <Route path="/add">
+              <AddToDo addTask={addTask} />
+            </Route>
+            <Route path="/list">
+              <ListToDo tasks={tasks} />
+            </Route>
+            <Route path="/search">
+              <Search tasks={tasks} />
+            </Route>
+            <Route path="/" exact>
+              <Home />
+            </Route>
+            <Route path="*">
+              <Redirect to="/" />
+            </Route>
+          </Switch>
+        </main>
+      </Router>
+    </myContext.Provider>
+  );
 }
