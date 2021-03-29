@@ -12,7 +12,7 @@ For basic showing of the function, five static tasks (four open, one finished) w
 
 Currently serverless, just front-end with React where all changes disappear when refresh the page.
 
-**Current functionalities (omega version):**
+**Current functionalities (alpha version):**
 
 - adding new to-do item (title, deadline and level of importance are mandatory, details are obligatory, forms reset after adding item)
 
@@ -48,7 +48,7 @@ Currently serverless, just front-end with React where all changes disappear when
 
 ## Implementation
 
-**Used technologies**: React, Create React App, React Router, functional components, class components, React Hooks, react Context, getDerivedStateFromProps life cycle method, customized sorting function in sort, JSX, CSS, CSS variables, Bootstrap, SVG
+**Used technologies**: React, Create React App, React Router DOM, functional components, class components, React Hooks, react Context, customized sorting function in sort, JSX, CSS, CSS variables, Bootstrap, SVG
 
 For the project configuration was used Create React App package.
 
