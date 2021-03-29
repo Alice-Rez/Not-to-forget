@@ -10,7 +10,7 @@ Simple React to-do app. Work in progress - adding new features and making code b
 
 Now working persistently - data are stored in localStorage of the browser, so also after refresh/closing of the browser, the data stay stored. Just no possibility to access them from different browser/device.
 
-**Current functionalities (omega version):**
+**Current functionalities (alpha version):**
 
 - adding new to-do item (title, deadline and level of importance are mandatory, details are obligatory, forms reset after adding item)
 
