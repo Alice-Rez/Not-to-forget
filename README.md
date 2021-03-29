@@ -46,7 +46,7 @@ Now working persistently - data are stored in localStorage of the browser, so al
 
 ## Implementation
 
-**Used technologies**: React, Create React App, React Router, functional components, class components, React Hooks, react Context, getDerivedStateFromProps life cycle method, customized sorting function in sort, JSX, CSS, CSS variables, Bootstrap, SVG
+**Used technologies**: React, Create React App, React Router, functional components, class components, React Hooks, react Context, customized sorting function in sort, JSX, CSS, CSS variables, Bootstrap, SVG
 
 For the project configuration was used Create React App package.
 
