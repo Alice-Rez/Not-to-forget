@@ -9,7 +9,10 @@ export default function Message(props) {
       ) : (
         <div>
           <p>
-            There are no opened to-do's. Add some new:{" "}
+            There are no {props.type === "open" ? props.type : null} to-do's.
+            Add some new:{" "}
+          </p>
+          <p>
             <Link to="/add" className="link icon-add">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

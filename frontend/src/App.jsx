@@ -110,6 +110,7 @@ export default function App() {
         deleteTask,
         checkTask,
         editTask,
+        addTask,
         tasks,
         setTasks,
       }}

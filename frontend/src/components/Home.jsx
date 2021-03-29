@@ -88,9 +88,15 @@ export default class Home extends Component {
             <p>
               <strong>Start with app</strong>
             </p>
-            <p>Explore advantages of Not to Forget in demo version</p>
-            <p>OR</p>
-            <p>Start your own to-do management by signing-up.</p>
+            <p>
+              Explore advantages of Not to Forget and Start your own to-do
+              management.
+            </p>
+            <p>All of your to-dos will be stored locally in the browser.</p>
+            <p>
+              Stay tuned for future version with login and possibility to access
+              your to-dos from any device you want!
+            </p>
           </article>
           <article className="card-white">
             <figure>
