@@ -7,6 +7,7 @@ export default class ListResults extends Component {
     impClicked: false,
     deadClicked: false,
     titleClicked: false,
+    sort: "none",
   };
 
   static getDerivedStateFromProps(props, state) {
@@ -52,33 +53,25 @@ export default class ListResults extends Component {
 
   sortImportance = () => {
     this.setState({
-      impClicked: true,
-      deadClicked: false,
-      titleClicked: false,
+      sort: "importance",
     });
   };
 
   sortDeadline = () => {
     this.setState({
-      impClicked: false,
-      deadClicked: true,
-      titleClicked: false,
+      sort: "deadline",
     });
   };
 
   sortTitle = () => {
     this.setState({
-      impClicked: false,
-      deadClicked: false,
-      titleClicked: true,
+      sort: "title",
     });
   };
 
   sortReset = () => {
     this.setState({
-      impClicked: false,
-      deadClicked: false,
-      titleClicked: false,
+      sort: "none",
     });
   };
   render() {
@@ -87,17 +80,13 @@ export default class ListResults extends Component {
         <section className="buttons-group">
           <button
             className={
-              !this.state.titleClicked &&
-              !this.state.deadClicked &&
-              !this.state.impClicked
+              this.state.sort === "none"
                 ? "btn btn-lg btn-list sort-active"
                 : "btn btn-lg btn-list"
             }
             onClick={this.sortReset}
           >
-            {!this.state.titleClicked &&
-            !this.state.deadClicked &&
-            !this.state.impClicked ? (
+            {this.state.sort === "none" ? (
               <span>&#11014;</span>
             ) : (
               <span>&#8679;</span>
@@ -106,14 +95,14 @@ export default class ListResults extends Component {
           </button>
           <button
             className={
-              this.state.impClicked
+              this.state.sort === "importance"
                 ? "btn btn-lg btn-list sort-active"
                 : "btn btn-lg btn-list"
             }
             id="impClicked"
             onClick={this.sortImportance}
           >
-            {this.state.impClicked ? (
+            {this.state.sort === "importance" ? (
               <span>&#11015;</span>
             ) : (
               <span>&#8681;</span>
@@ -122,14 +111,14 @@ export default class ListResults extends Component {
           </button>
           <button
             className={
-              this.state.deadClicked
+              this.state.sort === "deadline"
                 ? "btn btn-lg btn-list sort-active"
                 : "btn btn-lg btn-list"
             }
             id="deadClicked"
             onClick={this.sortDeadline}
           >
-            {this.state.deadClicked ? (
+            {this.state.sort === "deadline" ? (
               <span>&#11015;</span>
             ) : (
               <span>&#8681;</span>
@@ -138,14 +127,14 @@ export default class ListResults extends Component {
           </button>
           <button
             className={
-              this.state.titleClicked
+              this.state.sort === "title"
                 ? "btn btn-lg btn-list sort-active"
                 : "btn btn-lg btn-list"
             }
             id="titleClicked"
             onClick={this.sortTitle}
           >
-            {this.state.titleClicked ? (
+            {this.state.sort === "title" ? (
               <span>&#11015;</span>
             ) : (
               <span>&#8681;</span>
@@ -154,9 +143,7 @@ export default class ListResults extends Component {
           </button>
         </section>
         <section className="my-card-deck">
-          {this.state.impClicked ||
-          this.state.deadClicked ||
-          this.state.titleClicked
+          {this.state.sort !== "none"
             ? this.state.tasksSorted.map((task, index) => (
                 <itemContext.Provider value={task} key={`task-${index + 1}`}>
                   <Item />
