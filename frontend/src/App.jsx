@@ -121,15 +121,11 @@ export default function App() {
             <Route path="/add">
               <AddToDo addTask={addTask} />
             </Route>
-            <Route path="/list">
-              <ListToDo />
-            </Route>
+            <Route path="/list" exact component={ListToDo} />
             <Route path="/search">
               <Search tasks={tasks} />
             </Route>
-            <Route path="/" exact>
-              <Home />
-            </Route>
+            <Route path="/" exact component={Home} />
             <Route path="*">
               <Redirect to="/" />
             </Route>
