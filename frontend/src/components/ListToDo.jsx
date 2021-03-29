@@ -5,41 +5,29 @@ import Item from "./Item";
 export default class ListToDo extends Component {
   state = {
     displayCondition: "open",
-    sort: "none",
+    sort: "id",
   };
 
   static contextType = myContext;
 
-  // static getDerivedStateFromProps(props, state) {
-  //   let results;
-  //   if (state.displayCondition === "open") {
-  //     results = props.tasks.filter((item) => {
-  //       return !item.finished;
-  //     });
-  //     return {
-  //       ...state,
-  //       tasks: results,
-  //     };
-  //   } else if (state.displayCondition === "finished") {
-  //     results = props.tasks.filter((item) => {
-  //       return item.finished;
-  //     });
-  //     return {
-  //       ...state,
-  //       tasks: results,
-  //     };
-  //   }
-  //   return {
-  //     ...state,
-  //     tasks: props.tasks,
-  //   };
-  // }
+  sortTasks = (property) => {
+    this.context.setTasks((prevTasks) =>
+      prevTasks.sort(function (a, b) {
+        var keyA = a[property];
+        var keyB = b[property];
+        if (keyA < keyB) return -1;
+        if (keyA > keyB) return 1;
+        return 0;
+      })
+    );
+  };
 
   setSorting = (condition) => {
     this.setState({
       ...this.state,
       sort: condition,
     });
+    this.sortTasks(condition);
   };
 
   toggleVisibility = (condition) => {
@@ -91,15 +79,15 @@ export default class ListToDo extends Component {
         <section className="buttons-group">
           <button
             className={
-              this.state.sort === "none"
+              this.state.sort === "id"
                 ? "btn btn-lg btn-list sort-active"
                 : "btn btn-lg btn-list"
             }
             onClick={() => {
-              this.setSorting("reset");
+              this.setSorting("id");
             }}
           >
-            {this.state.sort === "none" ? (
+            {this.state.sort === "id" ? (
               <span>&#11014;</span>
             ) : (
               <span>&#8679;</span>
