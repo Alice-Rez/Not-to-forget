@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { itemContext } from "../context";
+import React, { useContext, useState } from "react";
+import { itemContext, myContext } from "../context";
 import SearchItem from "./SearchItem";
 import Item from "./Item";
 
@@ -7,6 +7,8 @@ export default function Search(props) {
   const [input, setInput] = useState("");
   const [visible, setVisible] = useState(true);
   const [showItem, setShowItem] = useState(false);
+
+  const { tasks } = useContext(myContext);
 
   return (
     <React.Fragment>
@@ -31,7 +33,7 @@ export default function Search(props) {
               }}
             />
             <ul className="search-list list-group">
-              {props.tasks.map((item, index) =>
+              {tasks.map((item, index) =>
                 item.title.toLowerCase().startsWith(input.toLowerCase()) &&
                 input &&
                 visible ? (
@@ -61,7 +63,7 @@ export default function Search(props) {
       </section>
       <section className="my-card-deck">
         {showItem
-          ? props.tasks.map((task, index) => {
+          ? tasks.map((task, index) => {
               if (input === task.title) {
                 return (
                   <itemContext.Provider value={task} key={`task-${index + 1}`}>

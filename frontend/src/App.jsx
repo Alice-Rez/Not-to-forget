@@ -119,13 +119,9 @@ export default function App() {
         <Header />
         <main className="p-3">
           <Switch>
-            <Route path="/add">
-              <AddToDo addTask={addTask} />
-            </Route>
+            <Route path="/add" exact component={AddToDo} />
             <Route path="/list" exact component={ListToDo} />
-            <Route path="/search">
-              <Search tasks={tasks} />
-            </Route>
+            <Route path="/search" exact component={Search} />
             <Route path="/" exact component={Home} />
             <Route path="*">
               <Redirect to="/" />

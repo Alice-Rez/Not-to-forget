@@ -5,12 +5,12 @@ export default function Message(props) {
   return (
     <article className="message">
       {props.type === "finished" ? (
-        <p>There are no finished to-do's. Check your open ones.</p>
+        <p>There are no finished to-dos. Check your open ones.</p>
       ) : (
         <div>
           <p>
-            There are no {props.type === "open" ? props.type : null} to-do's.
-            Add some new:{" "}
+            There are no {props.type === "open" ? props.type : null} to-dos. Add
+            some new:{" "}
           </p>
           <p>
             <Link to="/add" className="link icon-add">

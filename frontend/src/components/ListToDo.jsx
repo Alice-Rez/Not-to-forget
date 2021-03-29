@@ -37,12 +37,15 @@ export default class ListToDo extends Component {
 
   render() {
     let notDisplayed = 0;
+    const { tasks } = this.context;
+    const { displayCondition, sort } = this.state;
+
     return (
       <React.Fragment>
         <section className="buttons-group buttons-group-smaller">
           <button
             className={
-              this.state.displayCondition === "all"
+              displayCondition === "all"
                 ? "btn btn-lg btn-list sort-active"
                 : "btn btn-lg btn-list"
             }
@@ -54,7 +57,7 @@ export default class ListToDo extends Component {
           </button>
           <button
             className={
-              this.state.displayCondition === "open"
+              displayCondition === "open"
                 ? "btn btn-lg btn-list sort-active"
                 : "btn btn-lg btn-list"
             }
@@ -66,7 +69,7 @@ export default class ListToDo extends Component {
           </button>
           <button
             className={
-              this.state.displayCondition === "finished"
+              displayCondition === "finished"
                 ? "btn btn-lg btn-list sort-active"
                 : "btn btn-lg btn-list"
             }
@@ -81,7 +84,7 @@ export default class ListToDo extends Component {
         <section className="buttons-group">
           <button
             className={
-              this.state.sort === "id"
+              sort === "id"
                 ? "btn btn-lg btn-list sort-active"
                 : "btn btn-lg btn-list"
             }
@@ -89,16 +92,11 @@ export default class ListToDo extends Component {
               this.setSorting("id");
             }}
           >
-            {this.state.sort === "id" ? (
-              <span>&#11014;</span>
-            ) : (
-              <span>&#8679;</span>
-            )}{" "}
-            Added
+            {sort === "id" ? <span>&#11014;</span> : <span>&#8679;</span>} Added
           </button>
           <button
             className={
-              this.state.sort === "importance"
+              sort === "importance"
                 ? "btn btn-lg btn-list sort-active"
                 : "btn btn-lg btn-list"
             }
@@ -107,7 +105,7 @@ export default class ListToDo extends Component {
               this.setSorting("importance");
             }}
           >
-            {this.state.sort === "importance" ? (
+            {sort === "importance" ? (
               <span>&#11015;</span>
             ) : (
               <span>&#8681;</span>
@@ -116,7 +114,7 @@ export default class ListToDo extends Component {
           </button>
           <button
             className={
-              this.state.sort === "deadline"
+              sort === "deadline"
                 ? "btn btn-lg btn-list sort-active"
                 : "btn btn-lg btn-list"
             }
@@ -125,16 +123,12 @@ export default class ListToDo extends Component {
               this.setSorting("deadline");
             }}
           >
-            {this.state.sort === "deadline" ? (
-              <span>&#11015;</span>
-            ) : (
-              <span>&#8681;</span>
-            )}{" "}
+            {sort === "deadline" ? <span>&#11015;</span> : <span>&#8681;</span>}{" "}
             Deadline
           </button>
           <button
             className={
-              this.state.sort === "title"
+              sort === "title"
                 ? "btn btn-lg btn-list sort-active"
                 : "btn btn-lg btn-list"
             }
@@ -143,20 +137,17 @@ export default class ListToDo extends Component {
               this.setSorting("title");
             }}
           >
-            {this.state.sort === "title" ? (
-              <span>&#11015;</span>
-            ) : (
-              <span>&#8681;</span>
-            )}{" "}
+            {sort === "title" ? <span>&#11015;</span> : <span>&#8681;</span>}{" "}
             Title
           </button>
         </section>
+
         <section className="my-card-deck">
-          {this.context.tasks.map((task, index) => {
+          {tasks.map((task, index) => {
             if (
-              (this.state.displayCondition === "open" && !task.finished) ||
-              (this.state.displayCondition === "finished" && task.finished) ||
-              this.state.displayCondition === "all"
+              (displayCondition === "open" && !task.finished) ||
+              (displayCondition === "finished" && task.finished) ||
+              displayCondition === "all"
             ) {
               return (
                 <itemContext.Provider value={task} key={`task-${index + 1}`}>
@@ -168,9 +159,8 @@ export default class ListToDo extends Component {
             notDisplayed = notDisplayed + 1;
             return null;
           })}
-          {!this.context.tasks.length ||
-          notDisplayed === this.context.tasks.length ? (
-            <Message type={this.state.displayCondition} />
+          {!tasks.length || notDisplayed === tasks.length ? (
+            <Message type={displayCondition} />
           ) : null}
         </section>
       </React.Fragment>
