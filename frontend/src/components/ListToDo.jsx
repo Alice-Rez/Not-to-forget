@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { itemContext, myContext } from "../context";
 import Item from "./Item";
+import Message from "./Message";
 
 export default class ListToDo extends Component {
   state = {
@@ -35,6 +36,7 @@ export default class ListToDo extends Component {
   };
 
   render() {
+    let notDisplayed = 0;
     return (
       <React.Fragment>
         <section className="buttons-group buttons-group-smaller">
@@ -42,7 +44,7 @@ export default class ListToDo extends Component {
             className={
               this.state.displayCondition === "all"
                 ? "btn btn-lg btn-list sort-active"
-                : "btn btn-lg btn-list display-inactive"
+                : "btn btn-lg btn-list"
             }
             onClick={() => {
               this.toggleVisibility("all");
@@ -163,8 +165,13 @@ export default class ListToDo extends Component {
                 </itemContext.Provider>
               );
             }
+            notDisplayed = notDisplayed + 1;
             return null;
           })}
+          {!this.context.tasks.length ||
+          notDisplayed === this.context.tasks.length ? (
+            <Message type={this.state.displayCondition} />
+          ) : null}
         </section>
       </React.Fragment>
     );

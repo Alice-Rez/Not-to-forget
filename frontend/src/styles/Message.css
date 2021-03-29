@@ -1,0 +1,7 @@
+.message {
+  max-width: 480px;
+}
+
+.message p {
+  font-size: 1.5rem;
+}
