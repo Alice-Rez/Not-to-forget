@@ -3,13 +3,12 @@ import ListResults from "./ListResults";
 
 export default class ListToDo extends Component {
   state = {
-    open: false,
-    finished: false,
+    displayCondition: "open",
   };
 
   static getDerivedStateFromProps(props, state) {
     let results;
-    if (state.open) {
+    if (state.displayCondition === "open") {
       results = props.tasks.filter((item) => {
         return !item.finished;
       });
@@ -17,7 +16,7 @@ export default class ListToDo extends Component {
         ...state,
         tasks: results,
       };
-    } else if (state.finished) {
+    } else if (state.displayCondition === "finished") {
       results = props.tasks.filter((item) => {
         return item.finished;
       });
@@ -33,15 +32,15 @@ export default class ListToDo extends Component {
   }
 
   getOpenTasks = () => {
-    this.setState({ ...this.state, open: true, finished: false });
+    this.setState({ ...this.state, displayCondition: "open" });
   };
 
   getFinishedTasks = () => {
-    this.setState({ ...this.state, open: false, finished: true });
+    this.setState({ ...this.state, displayCondition: "finished" });
   };
 
   getAllTasks = () => {
-    this.setState({ ...this.state, open: false, finished: false });
+    this.setState({ ...this.state, displayCondition: "all" });
   };
 
   render() {
@@ -50,7 +49,7 @@ export default class ListToDo extends Component {
         <section className="buttons-group buttons-group-smaller">
           <button
             className={
-              !this.state.open && !this.state.finished
+              this.state.displayCondition === "all"
                 ? "btn btn-lg btn-list sort-active"
                 : "btn btn-lg btn-list display-inactive"
             }
@@ -60,7 +59,7 @@ export default class ListToDo extends Component {
           </button>
           <button
             className={
-              this.state.open
+              this.state.displayCondition === "open"
                 ? "btn btn-lg btn-list sort-active"
                 : "btn btn-lg btn-list"
             }
@@ -70,7 +69,7 @@ export default class ListToDo extends Component {
           </button>
           <button
             className={
-              this.state.finished
+              this.state.displayCondition === "finished"
                 ? "btn btn-lg btn-list sort-active"
                 : "btn btn-lg btn-list"
             }
