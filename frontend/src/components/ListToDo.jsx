@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { itemContext } from "../context";
+import { itemContext, myContext } from "../context";
 import Item from "./Item";
 
 export default class ListToDo extends Component {
@@ -8,30 +8,32 @@ export default class ListToDo extends Component {
     sort: "none",
   };
 
-  static getDerivedStateFromProps(props, state) {
-    let results;
-    if (state.displayCondition === "open") {
-      results = props.tasks.filter((item) => {
-        return !item.finished;
-      });
-      return {
-        ...state,
-        tasks: results,
-      };
-    } else if (state.displayCondition === "finished") {
-      results = props.tasks.filter((item) => {
-        return item.finished;
-      });
-      return {
-        ...state,
-        tasks: results,
-      };
-    }
-    return {
-      ...state,
-      tasks: props.tasks,
-    };
-  }
+  static contextType = myContext;
+
+  // static getDerivedStateFromProps(props, state) {
+  //   let results;
+  //   if (state.displayCondition === "open") {
+  //     results = props.tasks.filter((item) => {
+  //       return !item.finished;
+  //     });
+  //     return {
+  //       ...state,
+  //       tasks: results,
+  //     };
+  //   } else if (state.displayCondition === "finished") {
+  //     results = props.tasks.filter((item) => {
+  //       return item.finished;
+  //     });
+  //     return {
+  //       ...state,
+  //       tasks: results,
+  //     };
+  //   }
+  //   return {
+  //     ...state,
+  //     tasks: props.tasks,
+  //   };
+  // }
 
   setSorting = (condition) => {
     this.setState({
@@ -160,7 +162,7 @@ export default class ListToDo extends Component {
           </button>
         </section>
         <section className="my-card-deck">
-          {this.props.tasks.map((task, index) => {
+          {this.context.tasks.map((task, index) => {
             if (
               (this.state.displayCondition === "open" && !task.finished) ||
               (this.state.displayCondition === "finished" && task.finished) ||

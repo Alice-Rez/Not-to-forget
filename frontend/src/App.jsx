@@ -122,7 +122,7 @@ export default function App() {
               <AddToDo addTask={addTask} />
             </Route>
             <Route path="/list">
-              <ListToDo tasks={tasks} />
+              <ListToDo />
             </Route>
             <Route path="/search">
               <Search tasks={tasks} />
