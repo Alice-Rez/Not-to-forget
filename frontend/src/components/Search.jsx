@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { itemContext } from "./context";
+import { itemContext } from "../context";
 import SearchItem from "./SearchItem";
 import Item from "./Item";
 

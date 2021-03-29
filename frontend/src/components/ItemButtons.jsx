@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { itemContext, myContext } from "./context.jsx";
+import { itemContext, myContext } from "../context.js";
 import tickV2 from "../images/tickV2.svg";
 import cross from "../images/cross.svg";
 import edit from "../images/edit.svg";

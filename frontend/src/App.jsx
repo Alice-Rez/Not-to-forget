@@ -5,53 +5,53 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-import { myContext } from "./context.jsx";
-import Header from "./Header";
-import AddToDo from "./AddToDo";
-import ListToDo from "./ListToDo";
-import Search from "./Search";
-import Home from "./Home";
+import { myContext } from "./context.js";
+import Header from "./components/Header";
+import AddToDo from "./components/AddToDo";
+import ListToDo from "./components/ListToDo";
+import Search from "./components/Search";
+import Home from "./components/Home";
 
 export default function App() {
   const [tasks, setTasks] = useState([
-    // {
-    //   title: "learn React",
-    //   deadline: "2021-01-21",
-    //   importance: "1",
-    //   description:
-    //     "Learn React really in deep during my dci course, using FEM videos and Udemy course from Colt Steele",
-    //   id: 1,
-    // },
-    // {
-    //   title: "silvester",
-    //   deadline: "2020-12-31",
-    //   importance: "4",
-    //   description: "Finally end of this horror year!!!!",
-    //   id: 2,
-    // },
-    // {
-    //   title: "Christmas",
-    //   deadline: "2020-12-24",
-    //   importance: "3",
-    //   description:
-    //     "Although there is covid, still celebrate Christmas at least a bit!",
-    //   id: 3,
-    // },
-    // {
-    //   title: "final presentation",
-    //   deadline: "2021-03-23",
-    //   importance: "2",
-    //   description: "Presentation of our final projects. last day in DCI.",
-    //   id: 4,
-    // },
-    // {
-    //   title: "Halloween",
-    //   deadline: "2020-10-31",
-    //   importance: "4",
-    //   description: "Definitely do not celebrate Halloween this year!",
-    //   finished: true,
-    //   id: 5,
-    // },
+    {
+      title: "learn React",
+      deadline: "2021-01-21",
+      importance: "1",
+      description:
+        "Learn React really in deep during my dci course, using FEM videos and Udemy course from Colt Steele",
+      id: 1,
+    },
+    {
+      title: "silvester",
+      deadline: "2020-12-31",
+      importance: "4",
+      description: "Finally end of this horror year!!!!",
+      id: 2,
+    },
+    {
+      title: "Christmas",
+      deadline: "2020-12-24",
+      importance: "3",
+      description:
+        "Although there is covid, still celebrate Christmas at least a bit!",
+      id: 3,
+    },
+    {
+      title: "final presentation",
+      deadline: "2021-03-23",
+      importance: "2",
+      description: "Presentation of our final projects. last day in DCI.",
+      id: 4,
+    },
+    {
+      title: "Halloween",
+      deadline: "2020-10-31",
+      importance: "4",
+      description: "Definitely do not celebrate Halloween this year!",
+      finished: true,
+      id: 5,
+    },
   ]);
 
   useEffect(() => {
@@ -110,6 +110,8 @@ export default function App() {
         deleteTask,
         checkTask,
         editTask,
+        tasks,
+        setTasks,
       }}
     >
       <Router>
