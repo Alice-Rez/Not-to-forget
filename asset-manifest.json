@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/Not-to-forget/static/css/main.4e985957.chunk.css",
-    "main.js": "/Not-to-forget/static/js/main.892e7bae.chunk.js",
-    "main.js.map": "/Not-to-forget/static/js/main.892e7bae.chunk.js.map",
+    "main.css": "/Not-to-forget/static/css/main.b778045c.chunk.css",
+    "main.js": "/Not-to-forget/static/js/main.abe90ee9.chunk.js",
+    "main.js.map": "/Not-to-forget/static/js/main.abe90ee9.chunk.js.map",
     "runtime-main.js": "/Not-to-forget/static/js/runtime-main.b66b1594.js",
     "runtime-main.js.map": "/Not-to-forget/static/js/runtime-main.b66b1594.js.map",
     "static/css/2.6414bb7b.chunk.css": "/Not-to-forget/static/css/2.6414bb7b.chunk.css",
-    "static/js/2.6375011a.chunk.js": "/Not-to-forget/static/js/2.6375011a.chunk.js",
-    "static/js/2.6375011a.chunk.js.map": "/Not-to-forget/static/js/2.6375011a.chunk.js.map",
+    "static/js/2.9d1a17a4.chunk.js": "/Not-to-forget/static/js/2.9d1a17a4.chunk.js",
+    "static/js/2.9d1a17a4.chunk.js.map": "/Not-to-forget/static/js/2.9d1a17a4.chunk.js.map",
     "index.html": "/Not-to-forget/index.html",
-    "precache-manifest.69482b0a2665d0055df0e20876a3c753.js": "/Not-to-forget/precache-manifest.69482b0a2665d0055df0e20876a3c753.js",
+    "precache-manifest.06a21444644700754892184f11b15a3b.js": "/Not-to-forget/precache-manifest.06a21444644700754892184f11b15a3b.js",
     "service-worker.js": "/Not-to-forget/service-worker.js",
     "static/css/2.6414bb7b.chunk.css.map": "/Not-to-forget/static/css/2.6414bb7b.chunk.css.map",
-    "static/css/main.4e985957.chunk.css.map": "/Not-to-forget/static/css/main.4e985957.chunk.css.map",
-    "static/js/2.6375011a.chunk.js.LICENSE.txt": "/Not-to-forget/static/js/2.6375011a.chunk.js.LICENSE.txt",
+    "static/css/main.b778045c.chunk.css.map": "/Not-to-forget/static/css/main.b778045c.chunk.css.map",
+    "static/js/2.9d1a17a4.chunk.js.LICENSE.txt": "/Not-to-forget/static/js/2.9d1a17a4.chunk.js.LICENSE.txt",
     "static/media/cross.svg": "/Not-to-forget/static/media/cross.871eaf58.svg",
     "static/media/edit.svg": "/Not-to-forget/static/media/edit.1bf98d96.svg",
     "static/media/pin-green.png": "/Not-to-forget/static/media/pin-green.80c8015e.png",
@@ -26,8 +26,8 @@
   "entrypoints": [
     "static/js/runtime-main.b66b1594.js",
     "static/css/2.6414bb7b.chunk.css",
-    "static/js/2.6375011a.chunk.js",
-    "static/css/main.4e985957.chunk.css",
-    "static/js/main.892e7bae.chunk.js"
+    "static/js/2.9d1a17a4.chunk.js",
+    "static/css/main.b778045c.chunk.css",
+    "static/js/main.abe90ee9.chunk.js"
   ]
 }
