@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { itemContext, myContext } from "./context";
+import { itemContext, myContext } from "../context";
 
 export default function ItemContent(props) {
   const { editTask } = useContext(myContext);

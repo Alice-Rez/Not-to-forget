@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { itemContext } from "./context";
+import { itemContext } from "../context";
 import ItemContent from "./ItemContent";
 import ItemEdit from "./ItemEdit";
 import ItemEditButtons from "./ItemButtons.jsx";

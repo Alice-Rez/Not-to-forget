@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { itemContext, myContext } from "./context.jsx";
+import { itemContext, myContext } from "../context.js";
 
 export default function AlertDelete(props) {
   const { deleteTask } = useContext(myContext);

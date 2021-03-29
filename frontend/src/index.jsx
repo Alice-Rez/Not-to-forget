@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./components/App";
+import App from "./App";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import "./index.css";
 import "./styles/Header.css";
@@ -12,5 +12,6 @@ import "./styles/Item.css";
 import "./styles/ItemEditButtons.css";
 import "./styles/AlertDelete.css";
 import "./styles/Help.css";
+import "./styles/Message.css";
 
 ReactDOM.render(<App />, document.getElementById("root"));

@@ -1,9 +1,14 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router";
+import { myContext } from "../context";
 
 export default class AddToDo extends Component {
   state = {
     task: {},
+    redirect: false,
   };
+
+  static contextType = myContext;
 
   getValue = (e) => {
     this.setState({
@@ -11,17 +16,22 @@ export default class AddToDo extends Component {
     });
   };
 
+  submitForm = (e) => {
+    e.preventDefault();
+    this.context.addTask(this.state.task);
+    this.setState({ ...this.state, redirect: true });
+  };
+
   render() {
+    if (this.state.redirect) {
+      return <Redirect to="/list" />;
+    }
     return (
       <section className="section-main">
         <form
           action=""
           className="text-center d-flex flex-column align-items-center col-sm-12 mx-auto"
-          onSubmit={(e) => {
-            e.preventDefault();
-            this.props.addTask(this.state.task);
-            e.target.reset();
-          }}
+          onSubmit={this.submitForm}
         >
           <div className="form-group col-sm-10 row">
             <label htmlFor="title" className="col-sm-2 col-form-label ">
