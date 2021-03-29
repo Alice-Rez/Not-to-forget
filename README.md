@@ -8,9 +8,7 @@ Explore [Live demo](https://alice-rez.github.io/Not-to-forget/) or look at previ
 
 Simple React to-do app. Work in progress - adding new features and making code better as I learn more about React.
 
-For basic showing of the function, five static tasks (four open, one finished) were added as a default (but if you want to test app, you can add any other items you want :) ).
-
-Currently serverless, just front-end with React where all changes disappear when refresh the page.
+Now working persistently - data are stored in localStorage of the browser, so also after refresh/closing of the browser, the data stay stored. Just no possibility to access them from different browser/device.
 
 **Current functionalities (alpha version):**
 
