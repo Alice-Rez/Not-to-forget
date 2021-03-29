@@ -1,10 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
+import { Route, Redirect, HashRouter } from "react-router-dom";
 import { myContext } from "./context.js";
 import Header from "./components/Header";
 import AddToDo from "./components/AddToDo";
@@ -13,46 +8,7 @@ import Search from "./components/Search";
 import Home from "./components/Home";
 
 export default function App() {
-  const [tasks, setTasks] = useState([
-    // {
-    //   title: "learn React",
-    //   deadline: "2021-01-21",
-    //   importance: "1",
-    //   description:
-    //     "Learn React really in deep during my dci course, using FEM videos and Udemy course from Colt Steele",
-    //   id: 1,
-    // },
-    // {
-    //   title: "silvester",
-    //   deadline: "2020-12-31",
-    //   importance: "4",
-    //   description: "Finally end of this horror year!!!!",
-    //   id: 2,
-    // },
-    // {
-    //   title: "Christmas",
-    //   deadline: "2020-12-24",
-    //   importance: "3",
-    //   description:
-    //     "Although there is covid, still celebrate Christmas at least a bit!",
-    //   id: 3,
-    // },
-    // {
-    //   title: "final presentation",
-    //   deadline: "2021-03-23",
-    //   importance: "2",
-    //   description: "Presentation of our final projects. last day in DCI.",
-    //   id: 4,
-    // },
-    // {
-    //   title: "Halloween",
-    //   deadline: "2020-10-31",
-    //   importance: "4",
-    //   description: "Definitely do not celebrate Halloween this year!",
-    //   finished: true,
-    //   id: 5,
-    // },
-  ]);
+  const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
     if (localStorage.getItem("tasks")) {
@@ -115,20 +71,18 @@ export default function App() {
         setTasks,
       }}
     >
-      <Router>
+      <HashRouter>
         <Header />
         <main className="p-3">
-          <Switch>
-            <Route path="/add" exact component={AddToDo} />
-            <Route path="/list" exact component={ListToDo} />
-            <Route path="/search" exact component={Search} />
-            <Route path="/" exact component={Home} />
-            <Route path="*">
-              <Redirect to="/" />
-            </Route>
-          </Switch>
+          <Route path="/add" exact component={AddToDo} />
+          <Route path="/list" exact component={ListToDo} />
+          <Route path="/search" exact component={Search} />
+          <Route path="/" exact component={Home} />
+          <Route path="*">
+            <Redirect to="/" />
+          </Route>
         </main>
-      </Router>
+      </HashRouter>
     </myContext.Provider>
   );
 }
