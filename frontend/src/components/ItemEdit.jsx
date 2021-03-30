@@ -55,19 +55,20 @@ export default function ItemContent(props) {
           id="importance"
           className="form-control edit-input"
           onChange={getValue}
+          defaultValue={change.importance}
         >
-          <option value={change.importance - 1}>
+          {/* <option value={change.importance - 1}>
             {props.levels[change.importance - 1]}
-          </option>
+          </option> */}
           {props.levels.map((item, index) => {
-            if (index !== Number(change.importance - 1)) {
-              return (
-                <option value={index + 1} key={item}>
-                  {item}
-                </option>
-              );
-            }
-            return null;
+            // if (index !== Number(change.importance - 1)) {
+            return (
+              <option value={index + 1} key={item}>
+                {item}
+              </option>
+            );
+            // }
+            // return null;
           })}
         </select>
       </div>
