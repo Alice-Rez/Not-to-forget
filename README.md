@@ -12,13 +12,15 @@ Now working persistently - data are stored in localStorage of the browser, so al
 
 **Current functionalities (alpha version):**
 
-- adding new to-do item (title, deadline and level of importance are mandatory, details are obligatory, forms reset after adding item)
+- adding new to-do item (title, deadline and level of importance are mandatory, details are obligatory)
 
 <img align="right" src="./README-materials/image.png" width="70%">
 
-- list all of the to-do item
+- list all of the to-do item (by default just open tasks, user can choose to see finished or all)
 
 - importance of the task is also depicted by color of used pin (purple for the most important, green for the least)
+
+- possibility to check/uncheck task (to mark it as finished one), edit task (you can save changes or cancel the editing and go back to original state) or delete it (with display of alert if you want to delete it)
 
 - sorting listed items according to their importance, deadline or alphabetically by title with possible reset to default order (the order they were added in)
 
@@ -26,11 +28,7 @@ Now working persistently - data are stored in localStorage of the browser, so al
 
 - basic autocomplete function showing all names of existing items that corresponds to the typed search keyword (working just using mouse now)
 
-- possibility to check/uncheck task (to mark it as finished one), edit task (you can save changes or cancel the editing and go back to original state) or delete it (with display of alert if you want to delete it)
-
-- check/delete/edit is available in list of item but also when searched item is displayed in search 8just when change title in search mode, task will be no longer displayed for that search)
-
-- in list of all to-do, user can display all tasks or just open/finished once
+- check/delete/edit is available in list of item but also when searched item is displayed in search (just when change title in search mode, task will be no longer displayed for that search)
 
 ## Setup
 
