@@ -61,7 +61,6 @@ export default function ItemContent(props) {
           </option>
           {props.levels.map((item, index) => {
             if (index !== Number(change.importance - 1)) {
-              console.log("gotcha");
               return (
                 <option value={index + 1} key={item}>
                   {item}
