@@ -6,7 +6,7 @@ Explore [Live demo](https://alice-rez.github.io/Not-to-forget/) or look at previ
 
 ## Description
 
-Simple React to-do app. Work in progress - adding new features and making code better as I learn more about React.
+Simple React to-do app. 
 
 Now working persistently - data are stored in localStorage of the browser, so also after refresh/closing of the browser, the data stay stored. Just no possibility to access them from different browser/device.
 
